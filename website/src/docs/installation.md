@@ -79,7 +79,7 @@ sudo snap install task --classic
 Npm can be used as cross-platform way to install Task globally or as a
 dependency of your project
 [[package](https://www.npmjs.com/package/@go-task/cli)]
-[[source](https://github.com/go-task/task/blob/main/package.json)]:
+[[source](https://github.com/vikbert/taskr/blob/main/package.json)]:
 
 ```shell
 npm install -g @go-task/cli
@@ -116,12 +116,12 @@ as these install directly from our GitHub releases.
 ::: code-group
 
 ```shell [aqua]
-mise use -g aqua:go-task/task@latest
+mise use -g aqua:vikbert/taskr@latest
 mise install
 ```
 
 ```shell [ubi]
-mise use -g ubi:go-task/task
+mise use -g ubi:vikbert/taskr
 mise install
 ```
 
@@ -228,7 +228,7 @@ task
 ### Binary
 
 You can download the binary from the
-[releases page on GitHub](https://github.com/go-task/task/releases) and add to
+[releases page on GitHub](https://github.com/vikbert/taskr/releases) and add to
 your `$PATH`.
 
 DEB and RPM packages are also available.
@@ -238,7 +238,7 @@ The `task_checksums.txt` file contains the SHA-256 checksum for each file.
 ### Install Script
 
 We also have an
-[install script](https://github.com/go-task/task/blob/main/install-task.sh)
+[install script](https://github.com/vikbert/taskr/blob/main/install-task.sh)
 which is very useful in scenarios like CI. Many thanks to
 [GoDownloader](https://github.com/goreleaser/godownloader) for enabling the easy
 generation of this script.
@@ -266,7 +266,7 @@ default.
 :::
 
 By default, it installs the latest version available. You can also specify a tag
-(available in [releases](https://github.com/go-task/task/releases)) to install a
+(available in [releases](https://github.com/vikbert/taskr/releases)) to install a
 specific version:
 
 ```shell
@@ -297,18 +297,18 @@ examples and configuration.
 
 Ensure that you have a supported version of [Go](https://golang.org) properly
 installed and setup. You can find the minimum required version of Go in the
-[go.mod](https://github.com/go-task/task/blob/main/go.mod#L3) file.
+[go.mod](https://github.com/vikbert/taskr/blob/main/go.mod#L3) file.
 
 You can then install the latest release globally by running:
 
 ```shell
-go install github.com/go-task/task/v3/cmd/task@latest
+go install github.com/vikbert/taskr/v3/cmd/task@latest
 ```
 
 Or you can install into another directory:
 
 ```shell
-env GOBIN=/bin go install github.com/go-task/task/v3/cmd/task@latest
+env GOBIN=/bin go install github.com/vikbert/taskr/v3/cmd/task@latest
 ```
 
 ::: tip

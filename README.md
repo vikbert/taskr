@@ -6,7 +6,7 @@
   <h1>Taskr</h1>
 
   <p>
-    A high-performance golang task runner <br>extended from <b>go-task/task</b> <br> with the rich enhancements.
+    A high-performance golang task runner <br>extended from <b>vikbert/taskr</b> <br> with the rich enhancements.
   </p>
 
   <img src="website/src/public/img/taskr.png" alt="taskr_comparision"/>

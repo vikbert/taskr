@@ -133,7 +133,7 @@ outline: deep
   using [VitePress](https://vitepress.dev) (#2359, #2369, #2371, #2375, #2378 by
   @vmaerten, @andreynering, @pd93).
 - Began releasing
-  [nightly builds](https://github.com/go-task/task/releases/tag/nightly). This
+  [nightly builds](https://github.com/vikbert/taskr/releases/tag/nightly). This
   will allow people to test our changes before they are fully released and
   without having to install Go to build them (#2358 by @vmaerten).
 - Added support for global config files in `$XDG_CONFIG_HOME/task/taskrc.yml` or
@@ -198,7 +198,7 @@ Failed due to an issue with our release process.
   by specifying a checksum. This works with both local and remote Taskfiles
   (#2222, #2223 by @pd93).
 - When using the
-  [Remote Taskfiles experiment](https://github.com/go-task/task/issues/1317),
+  [Remote Taskfiles experiment](https://github.com/vikbert/taskr/issues/1317),
   any credentials used in the URL will now be redacted in Task's output (#2100,
   #2220 by @pd93).
 - Fixed fuzzy suggestions not working when misspelling a task name (#2192, #2200
@@ -235,7 +235,7 @@ Reverted the changes made in #2113 and #2186 that affected the
   seconds to 100 milliseconds, because now it configures the wait time for
   duplicated events, instead of the polling time (#2048 by @andreynering, #1508,
   #985, #1179).
-- The [Map Variables experiment](https://github.com/go-task/task/issues/1585)
+- The [Map Variables experiment](https://github.com/vikbert/taskr/issues/1585)
   was made generally available so you can now
   [define map variables in your Taskfiles!](https://taskr-io.vercel.app/usage/#variables)
   (#1585, #1547, #2081 by @pd93).
@@ -248,7 +248,7 @@ Reverted the changes made in #2113 and #2186 that affected the
 - Added the ability to resolve variables when defining an include variable
   (#2108, #2113 by @pd93).
 - A few changes have been made to the
-  [Remote Taskfiles experiment](https://github.com/go-task/task/issues/1317)
+  [Remote Taskfiles experiment](https://github.com/vikbert/taskr/issues/1317)
   (#1402, #2176 by @pd93):
   - Cached files are now prioritized over remote ones.
   - Added an `--expiry` flag which sets the TTL for a remote file cache. By
@@ -277,21 +277,21 @@ Reverted the changes made in #2113 and #2186 that affected the
 
 #### Package API
 
-- The [`Executor`](https://pkg.go.dev/github.com/go-task/task/v3#Executor) now
+- The [`Executor`](https://pkg.go.dev/github.com/vikbert/taskr/v3#Executor) now
   uses the functional options pattern (#2085, #2147, #2148 by @pd93).
 - The functional options for the
-  [`taskfile.Reader`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Reader)
+  [`taskfile.Reader`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Reader)
   and
-  [`taskfile.Snippet`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Snippet)
+  [`taskfile.Snippet`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Snippet)
   types no longer have the `Reader`/`Snippet` respective prefixes (#2148 by
   @pd93).
-- [`taskfile.Reader`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Reader)
+- [`taskfile.Reader`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Reader)
   no longer accepts a
-  [`taskfile.Node`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Node).
+  [`taskfile.Node`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Node).
   Instead nodes are passed directly into the
-  [`Reader.Read`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Reader.Read)
+  [`Reader.Read`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Reader.Read)
   method (#2169 by @pd93).
-- [`Reader.Read`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Reader.Read)
+- [`Reader.Read`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Reader.Read)
   also now accepts a [`context.Context`](https://pkg.go.dev/context#Context)
   (#2176 by @pd93).
 
@@ -342,36 +342,36 @@ changes will provide a better long-term experience for our users and allow to
 stabilize the API in the future. #121 now tracks this piece of work.
 
 - Bumped the minimum required Go version to 1.23 (#2059 by @pd93).
-- [`task.InitTaskfile`](https://pkg.go.dev/github.com/go-task/task/v3#InitTaskfile)
+- [`task.InitTaskfile`](https://pkg.go.dev/github.com/vikbert/taskr/v3#InitTaskfile)
   (#2011, ff8c913 by @HeCorr and @pd93)
   - No longer accepts an `io.Writer` (output is now the caller's
     responsibility).
   - The path argument can now be a filename OR a directory.
   - The function now returns the full path of the generated file.
-- [`TaskfileDecodeError.WithFileInfo`](https://pkg.go.dev/github.com/go-task/task/v3/errors#TaskfileDecodeError.WithFileInfo)
+- [`TaskfileDecodeError.WithFileInfo`](https://pkg.go.dev/github.com/vikbert/taskr/v3/errors#TaskfileDecodeError.WithFileInfo)
   now accepts a string instead of the arguments required to generate a snippet
   (#2068 by @pd93).
   - The caller is now expected to create the snippet themselves (see below).
-- [`TaskfileSnippet`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Snippet)
+- [`TaskfileSnippet`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Snippet)
   and related code moved from the `errors` package to the `taskfile` package
   (#2068 by @pd93).
 - Renamed `TaskMissingRequiredVars` to
-  [`TaskMissingRequiredVarsError`](https://pkg.go.dev/github.com/go-task/task/v3/errors#TaskMissingRequiredVarsError)
+  [`TaskMissingRequiredVarsError`](https://pkg.go.dev/github.com/vikbert/taskr/v3/errors#TaskMissingRequiredVarsError)
   (#2052 by @vmaerten).
 - Renamed `TaskNotAllowedVars` to
-  [`TaskNotAllowedVarsError`](https://pkg.go.dev/github.com/go-task/task/v3/errors#TaskNotAllowedVarsError)
+  [`TaskNotAllowedVarsError`](https://pkg.go.dev/github.com/vikbert/taskr/v3/errors#TaskNotAllowedVarsError)
   (#2052 by @vmaerten).
 - The
-  [`taskfile.Reader`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Reader)
+  [`taskfile.Reader`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Reader)
   is now constructed using the functional options pattern (#2082 by @pd93).
 - Removed our internal `logger.Logger` from the entire `taskfile` package (#2082
   by @pd93).
   - Users are now expected to pass a custom debug/prompt functions into
-    [`taskfile.Reader`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#Reader)
+    [`taskfile.Reader`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#Reader)
     if they want this functionality by using the new
-    [`WithDebugFunc`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#WithDebugFunc)
+    [`WithDebugFunc`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#WithDebugFunc)
     and
-    [`WithPromptFunc`](https://pkg.go.dev/github.com/go-task/task/v3/taskfile#WithPromptFunc)
+    [`WithPromptFunc`](https://pkg.go.dev/github.com/vikbert/taskr/v3/taskfile#WithPromptFunc)
     functional options.
 - Remove `Range` functions in the `taskfile/ast` package in favour of new
   iterator functions (#1798 by @pd93).
@@ -545,7 +545,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 
 - Released the
   [Any Variables experiment](https://taskr-io.vercel.app/blog/any-variables), but
-  [_without support for maps_](https://github.com/go-task/task/issues/1415#issuecomment-2044756925)
+  [_without support for maps_](https://github.com/vikbert/taskr/issues/1415#issuecomment-2044756925)
   (#1415, #1547 by @pd93).
 - Refactored how Task reads, parses and merges Taskfiles using a DAG (#1563,
   #1607 by @pd93).
@@ -1305,7 +1305,7 @@ it a go and let us know what you think via a
 - Task now have a dedicated documentation site: https://taskfile.org
   - Thanks to [Docsify](https://docsify.js.org/) for making this pretty easy. To
     check the source code, just take a look at the
-    [docs](https://github.com/go-task/task/tree/main/docs) directory of this
+    [docs](https://github.com/vikbert/taskr/tree/main/docs) directory of this
     repository. Contributions to the documentation is really appreciated.
 
 ## v2.1.1 - 2018-09-17
@@ -1327,7 +1327,7 @@ it a go and let us know what you think via a
 - Fix YAML merging syntax (#112)
 - Add ZSH completion (#111)
 - Implement new `output` option. Please check out the
-  [documentation](https://github.com/go-task/task#output-syntax)
+  [documentation](https://github.com/vikbert/taskr#output-syntax)
 
 ## v2.0.2 - 2018-05-01
 
@@ -1342,7 +1342,7 @@ it a go and let us know what you think via a
 Version 2.0.0 is here, with a new Taskfile format.
 
 Please, make sure to read the
-[Taskfile versions](https://github.com/go-task/task/blob/main/TASKFILE_VERSIONS.md)
+[Taskfile versions](https://github.com/vikbert/taskr/blob/main/TASKFILE_VERSIONS.md)
 document, since it describes in depth what changed for this version.
 
 - New Taskfile version 2 (#77)

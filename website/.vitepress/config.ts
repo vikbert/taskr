@@ -109,7 +109,7 @@ export default defineConfig({
     config: (md) => {
       md.use(githubLinksPlugin, {
         baseUrl: 'https://github.com',
-        repo: 'go-task/task'
+        repo: 'vikbert/taskr'
       });
       md.use(tabsMarkdownPlugin);
       md.use(groupIconMdPlugin);
@@ -175,62 +175,10 @@ export default defineConfig({
         text: 'Docs',
         link: '/docs/guide',
         activeMatch: '^/docs'
-      },
-      { text: 'Blog', link: '/blog', activeMatch: '^/blog' },
-      { text: 'Donate', link: '/donate' },
-      { text: 'Team', link: '/team' },
-      {
-        text: process.env.NODE_ENV === 'development' ? 'Next' : `v${version}`,
-        items: [
-          {
-            items: [
-              {
-                text: `v${version}`,
-                link: urlVersion.current
-              },
-              {
-                text: 'Next',
-                link: urlVersion.next
-              }
-            ]
-          }
-        ]
       }
     ],
 
     sidebar: {
-      '/blog/': [
-        {
-          text: '2025',
-          collapsed: false,
-          items: [
-            {
-              text: 'Built-in Core Utilities',
-              link: '/blog/windows-core-utils'
-            }
-          ]
-        },
-        {
-          text: '2024',
-          collapsed: false,
-          items: [
-            {
-              text: 'Any Variables',
-              link: '/blog/any-variables'
-            }
-          ]
-        },
-        {
-          text: '2023',
-          collapsed: false,
-          items: [
-            {
-              text: 'Introducing Experiments',
-              link: '/blog/task-in-2023'
-            }
-          ]
-        }
-      ],
       '/': [
         {
           text: 'Installation',
@@ -275,44 +223,6 @@ export default defineConfig({
           ]
         },
         {
-          text: 'Experiments',
-          collapsed: true,
-          link: '/docs/experiments/',
-          items: [
-            {
-              text: 'Env Precedence (#1038)',
-              link: '/docs/experiments/env-precedence'
-            },
-            {
-              text: 'Gentle Force (#1200)',
-              link: '/docs/experiments/gentle-force'
-            },
-            {
-              text: 'Remote Taskfiles (#1317)',
-              link: '/docs/experiments/remote-taskfiles'
-            }
-          ]
-        },
-        {
-          text: 'Deprecations',
-          collapsed: true,
-          link: '/docs/deprecations/',
-          items: [
-            {
-              text: 'Completion Scripts',
-              link: '/docs/deprecations/completion-scripts'
-            },
-            {
-              text: 'Template Functions',
-              link: '/docs/deprecations/template-functions'
-            },
-            {
-              text: 'Version 2 Schema (#1197)',
-              link: '/docs/deprecations/version-2-schema'
-            }
-          ]
-        },
-        {
           text: 'Taskfile Versions',
           link: '/docs/taskfile-versions'
         },
@@ -345,22 +255,15 @@ export default defineConfig({
           link: '/docs/faq'
         }
       ],
-      // Hacky to disable sidebar for these pages
-      '/donate': [],
-      '/team': []
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/go-task/task' },
-      { icon: 'discord', link: 'https://discord.gg/6TY36E39UK' },
-      { icon: 'x', link: 'https://twitter.com/taskfiledev' },
-      { icon: 'bluesky', link: 'https://bsky.app/profile/taskr-io.vercel.app' },
-      { icon: 'mastodon', link: 'https://fosstodon.org/@task' }
+      { icon: 'github', link: 'https://github.com/vikbert/taskr' },
     ],
 
     footer: {
       message:
-        'Built with <a target="_blank" href="https://www.netlify.com">Netlify</a>'
+        'Built with <a target="_blank" href="https://www.vercel.com">Vercel</a>'
     }
   },
   sitemap: {

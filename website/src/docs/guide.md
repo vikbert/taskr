@@ -2418,14 +2418,14 @@ if called by another task, either directly or as a dependency.
 ::: warning
 
 The watcher can misbehave in certain scenarios, in particular for long-running
-servers. There is a [known bug](https://github.com/go-task/task/issues/160)
+servers. There is a [known bug](https://github.com/vikbert/taskr/issues/160)
 where child processes of the running might not be killed appropriately. It's
 advised to avoid running commands as `go run` and prefer `go build [...] &&
 ./binary` instead.
 
 If you are having issues, you might want to try tools specifically designed for
 live-reloading, like [Air](https://github.com/air-verse/air/). Also, be sure to
-[report any issues](https://github.com/go-task/task/issues/new?template=bug_report.yml)
+[report any issues](https://github.com/vikbert/taskr/issues/new?template=bug_report.yml)
 to us.
 
 :::

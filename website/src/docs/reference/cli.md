@@ -345,7 +345,7 @@ instead of the above codes.
 ::: tip
 
 The complete list of exit codes is available in the repository at
-[`errors/errors.go`](https://github.com/go-task/task/blob/main/errors/errors.go).
+[`errors/errors.go`](https://github.com/vikbert/taskr/blob/main/errors/errors.go).
 
 :::
 

@@ -32,10 +32,10 @@ Some installation methods are maintained by third party:
 ## More
 
 Also, thanks for all the
-[code contributors](https://github.com/go-task/task/graphs/contributors),
+[code contributors](https://github.com/vikbert/taskr/graphs/contributors),
 [financial contributors](https://opencollective.com/task), all those who
-[reported bugs](https://github.com/go-task/task/issues?q=is%3Aissue) and
-[answered questions](https://github.com/go-task/task/discussions).
+[reported bugs](https://github.com/vikbert/taskr/issues?q=is%3Aissue) and
+[answered questions](https://github.com/vikbert/taskr/discussions).
 
 If you know something that is missing in this document, please submit a pull
 request.

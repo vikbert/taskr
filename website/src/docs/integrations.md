@@ -35,7 +35,7 @@ To get autocompletion and validation for your Taskfile, see the
 This was initially created by @KROSF in
 [this Gist](https://gist.github.com/KROSF/c5435acf590acd632f71bb720f685895) and
 is now officially maintained in
-[this file](https://github.com/go-task/task/blob/main/website/src/public/schema.json)
+[this file](https://github.com/vikbert/taskr/blob/main/website/src/public/schema.json)
 and made available at https://taskr-io.vercel.app/schema.json. This schema can be used
 to validate Taskfiles and provide autocompletion in many code editors:
 

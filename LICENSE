@@ -8,8 +8,8 @@ Taskr
 
 Copyright (c) 2025 Xun Zhou
 
-This project "taskr" is derived from the open-source project "go-task/task":
-https://github.com/go-task/task
+This project "taskr" is derived from the open-source project "vikbert/taskr":
+https://github.com/vikbert/taskr
 Original work Copyright (c) 2016-present The go-task authors.
 
 Licensed under the MIT License.

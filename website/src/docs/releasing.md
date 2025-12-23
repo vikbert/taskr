@@ -12,7 +12,7 @@ The release process of Task is done with the help of [GoReleaser][goreleaser].
 You can test the release process locally by calling the `test-release` task of
 the Taskfile.
 
-[GitHub Actions](https://github.com/go-task/task/actions) should release
+[GitHub Actions](https://github.com/vikbert/taskr/actions) should release
 artifacts automatically when a new Git tag is pushed to `main` branch (raw
 executables and DEB and RPM packages).
 
@@ -67,7 +67,7 @@ If you think its Task version is outdated, open an issue to let us know.
 [goreleaser]: https://goreleaser.com/
 [homebrewtap]: https://github.com/go-task/homebrew-tap
 [gotaskrb]: https://github.com/go-task/homebrew-tap/blob/main/Formula/go-task.rb
-[packagejson]: https://github.com/go-task/task/blob/main/package.json#L3
+[packagejson]: https://github.com/vikbert/taskr/blob/main/package.json#L3
 [snappackage]: https://github.com/go-task/snap
 [snapcraftyaml]:
   https://github.com/go-task/snap/blob/main/snap/snapcraft.yaml#L2

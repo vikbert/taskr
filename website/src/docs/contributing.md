@@ -156,7 +156,7 @@ If you have questions, feel free to ask them in the `#help` forum channel on our
 
 ---
 
-[task]: https://github.com/go-task/task
+[task]: https://github.com/vikbert/taskr
 [vscode-task]: https://github.com/go-task/vscode-task
 [go]: https://go.dev
 [gofumpt]: https://github.com/mvdan/gofumpt
@@ -168,12 +168,12 @@ If you have questions, feel free to ask them in the `#help` forum channel on our
 [pnpm]: https://pnpm.io/
 [vitepress]: https://vitepress.dev
 [json-schema]:
-  https://github.com/go-task/task/blob/main/website/src/public/schema.json
-[task-open-issues]: https://github.com/go-task/task/issues
+  https://github.com/vikbert/taskr/blob/main/website/src/public/schema.json
+[task-open-issues]: https://github.com/vikbert/taskr/issues
 [vscode-task-open-issues]: https://github.com/go-task/vscode-task/issues
 [good-first-issue]:
-  https://github.com/go-task/task/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+  https://github.com/vikbert/taskr/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
 [discord-server]: https://discord.gg/6TY36E39UK
-[discussion]: https://github.com/go-task/task/discussions
+[discussion]: https://github.com/vikbert/taskr/discussions
 [conventional-commits]: https://www.conventionalcommits.org
 [mdx]: https://mdxjs.com/
