@@ -1,0 +1,29 @@
+version: '3'
+banner: true
+categories: ["core"]
+
+tasks:
+  # Core category tasks - should appear in YAML order: install, build, test
+  install:
+    category: core
+    desc: Install dependencies
+    cmds:
+      - echo "installing"
+
+  build:
+    category: core
+    desc: Build the project
+    cmds:
+      - echo "building"
+
+  test:
+    category: core
+    desc: Run tests
+    cmds:
+      - echo "testing"
+
+  # General category task
+  clean:
+    desc: Clean up
+    cmds:
+      - echo "cleaning"

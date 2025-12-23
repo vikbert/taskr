@@ -1,0 +1,9 @@
+version: '3'
+
+banner: true
+
+tasks:
+  test:
+    desc: Test banner display
+    cmds:
+      - echo "Banner test complete"

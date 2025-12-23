@@ -1,0 +1,49 @@
+version: '3'
+banner: true
+categories: ["test", "core", "generate"]
+
+tasks:
+  # Test category tasks (should appear first due to categories order)
+  test:run:
+    category: test
+    desc: Run tests
+    cmds:
+      - echo "running tests"
+
+  test:build:
+    category: test
+    desc: Build tests
+    cmds:
+      - echo "building tests"
+
+  # Core category tasks (should appear second)
+  build:
+    category: core
+    desc: Build the project
+    cmds:
+      - echo "building"
+
+  install:
+    category: core
+    desc: Install dependencies
+    cmds:
+      - echo "installing"
+
+  # Generate category tasks (should appear third)
+  generate:
+    category: generate
+    desc: Generate code
+    cmds:
+      - echo "generating"
+
+  # General category task (no category, should appear first by default)
+  clean:
+    desc: Clean up
+    cmds:
+      - echo "cleaning"
+
+  # Another general task
+  help:
+    desc: Show help
+    cmds:
+      - echo "help"

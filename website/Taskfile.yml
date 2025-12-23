@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=./src/public/schema.json
+version: '3'
+
+tasks:
+  install:
+    category: website
+    desc: Setup VitePress locally
+    cmds:
+      - pnpm install
+    sources:
+      - package.json
+      - pnpm-lock.yaml
+
+  default:
+    category: website
+    desc: Start website
+    deps: [install]
+    vars:
+      HOST: '{{default "0.0.0.0" .HOST}}'
+      PORT: '{{default "3001" .PORT}}'
+    cmds:
+      - pnpm dev --host={{.HOST}} --port={{.PORT}}
+
+  lint:
+    category: website
+    desc: Lint website
+    deps: [install]
+    cmds:
+      - pnpm lint
+
+  build:
+    category: website
+    desc: Build website
+    deps: [install]
+    cmds:
+      - pnpm build
+
+  preview:
+    category: website
+    desc: Preview Website
+    deps: [build]
+    aliases: [serve]
+    vars:
+      HOST: '{{default "localhost" .HOST}}'
+      PORT: '{{default "3001" .PORT}}'
+    cmds:
+      - pnpm preview --host={{.HOST}} --port={{.PORT}}
+
+  clean:
+    category: website
+    desc: Clean temp directories
+    cmds:
+      - rm -rf ./vitepress/dist
+
+  deploy:next:
+    category: website
+    desc: Build and deploy next.taskfile.dev
+    cmds:
+      - pnpm netlify deploy --prod --site=4e13dfcf-fc0d-4bec-ad60-b918a8dc3942
+
+  deploy:prod:
+    category: website
+    desc: Build and deploy taskfile.dev
+    cmds:
+      - pnpm netlify deploy --prod --site=e625bc6a-1cd3-465d-ad30-7bbddaeb4f31

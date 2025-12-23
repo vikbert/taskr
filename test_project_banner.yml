@@ -1,0 +1,9 @@
+version: '3'
+project: MyAwesomeProject
+banner: true
+
+tasks:
+  hello:
+    desc: Say hello
+    cmds:
+      - echo "Hello from {{.PROJECT}}!"

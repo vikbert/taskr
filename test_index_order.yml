@@ -1,0 +1,52 @@
+version: '3'
+banner: true
+categories: ["core", "test"]
+
+tasks:
+  # Core category tasks - should appear in index order: 3, 1, 5, then by line number
+  build:
+    category: core
+    index: 3
+    desc: Build the project
+    cmds:
+      - echo "building"
+
+  install:
+    category: core
+    index: 1
+    desc: Install dependencies
+    cmds:
+      - echo "installing"
+
+  deploy:
+    category: core
+    index: 5
+    desc: Deploy application
+    cmds:
+      - echo "deploying"
+
+  # Test category tasks - should appear in index order: 2, 10, then by line number
+  test:unit:
+    category: test
+    index: 2
+    desc: Run unit tests
+    cmds:
+      - echo "unit testing"
+
+  test:integration:
+    category: test
+    index: 10
+    desc: Run integration tests
+    cmds:
+      - echo "integration testing"
+
+  # General category tasks (no category) - should appear first, ordered by line number
+  clean:
+    desc: Clean up
+    cmds:
+      - echo "cleaning"
+
+  help:
+    desc: Show help
+    cmds:
+      - echo "help"

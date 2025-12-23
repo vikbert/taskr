@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Build the application
+    category: build
+    cmds:
+      - go build ./cmd/taskr
+
+  check-docker:
+    desc: Check if Docker is running
+    category: dev
+    cmds:
+      - docker info
+
+  run:
+    desc: Run API server with hot-reload
+    category: dev
+    cmds:
+      - air
+
+  test:
+    desc: Run tests
+    category: test
+    cmds:
+      - go test ./...

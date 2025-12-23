@@ -1,0 +1,28 @@
+version: '3'
+banner: true
+
+tasks:
+  # Tasks in different categories
+  test:run:
+    category: test
+    desc: Run tests
+    cmds:
+      - echo "running tests"
+
+  build:
+    category: core
+    desc: Build the project
+    cmds:
+      - echo "building"
+
+  generate:
+    category: generate
+    desc: Generate code
+    cmds:
+      - echo "generating"
+
+  # General category task (no category)
+  clean:
+    desc: Clean up
+    cmds:
+      - echo "cleaning"

@@ -1,0 +1,67 @@
+version: '3'
+banner: true
+categories: ["build", "test", "deploy"]
+
+tasks:
+  # Build tasks - ordered by index
+  build:deps:
+    category: build
+    index: 1
+    desc: Install build dependencies
+    cmds:
+      - echo "Installing dependencies..."
+
+  build:compile:
+    category: build
+    index: 2
+    desc: Compile the application
+    cmds:
+      - echo "Compiling..."
+
+  build:package:
+    category: build
+    index: 3
+    desc: Package the application
+    cmds:
+      - echo "Packaging..."
+
+  # Test tasks - ordered by index
+  test:unit:
+    category: test
+    index: 1
+    desc: Run unit tests
+    cmds:
+      - echo "Running unit tests..."
+
+  test:integration:
+    category: test
+    index: 2
+    desc: Run integration tests
+    cmds:
+      - echo "Running integration tests..."
+
+  # Deploy tasks - ordered by index
+  deploy:staging:
+    category: deploy
+    index: 1
+    desc: Deploy to staging
+    cmds:
+      - echo "Deploying to staging..."
+
+  deploy:production:
+    category: deploy
+    index: 2
+    desc: Deploy to production
+    cmds:
+      - echo "Deploying to production..."
+
+  # General tasks (no category) - appear first, ordered by YAML position
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - echo "Cleaning..."
+
+  help:
+    desc: Show help
+    cmds:
+      - echo "Showing help..."
