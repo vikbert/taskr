@@ -126,8 +126,8 @@ to!
 [contributors]: https://github.com/go-task/task/graphs/contributors
 [semver]: https://semver.org
 [breaking-change-proposal]: https://github.com/go-task/task/discussions/1191
-[experiments]: https://taskfile.dev/experiments
-[deprecations]: https://taskfile.dev/deprecations
+[experiments]: https://taskr-io.vercel.app/experiments
+[deprecations]: https://taskr-io.vercel.app/deprecations
 [deprecate-version-2-schema]: https://github.com/go-task/task/issues/1197
 [issues]: https://github.com/go-task/task/issues
 [discussions]: https://github.com/go-task/task/discussions

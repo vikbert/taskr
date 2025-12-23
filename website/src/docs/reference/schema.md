@@ -8,7 +8,7 @@ outline: deep
 
 This page documents all available properties and types for the Taskfile schema
 version 3, based on the
-[official JSON schema](https://taskfile.dev/schema.json).
+[official JSON schema](https://taskr-io.vercel.app/schema.json).
 
 ## Root Schema
 

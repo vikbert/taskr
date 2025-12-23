@@ -210,8 +210,8 @@ pacstall -I go-task-deb
 
 ### [pkgx](https://pkgx.sh) ![macOS](https://img.shields.io/badge/MacOS-000000?logo=apple&logoColor=F0F0F0) ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black) {#pkgx}
 
-[[package](https://pkgx.dev/pkgs/taskfile.dev)]
-[[source](https://github.com/pkgxdev/pantry/blob/main/projects/taskfile.dev/package.yml)]
+[[package](https://pkgx.dev/pkgs/taskr-io.vercel.app)]
+[[source](https://github.com/pkgxdev/pantry/blob/main/projects/taskr-io.vercel.app/package.yml)]
 
 ```shell
 pkgx task
@@ -247,7 +247,7 @@ By default, it installs on the `./bin` directory relative to the working
 directory:
 
 ```shell
-sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
+sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d
 ```
 
 It is possible to override the installation directory with the `-b` parameter.
@@ -255,7 +255,7 @@ On Linux, common choices are `~/.local/bin` and `~/bin` to install for the
 current user or `/usr/local/bin` to install for all users:
 
 ```shell
-sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
+sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d -b ~/.local/bin
 ```
 
 ::: warning
@@ -270,13 +270,13 @@ By default, it installs the latest version available. You can also specify a tag
 specific version:
 
 ```shell
-sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d v3.36.0
+sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d v3.36.0
 ```
 
 Parameters are order specific, to set both installation directory and version:
 
 ```shell
-sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin v3.42.1
+sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d -b ~/.local/bin v3.42.1
 ```
 
 ### GitHub Actions

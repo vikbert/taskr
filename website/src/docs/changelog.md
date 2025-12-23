@@ -127,9 +127,9 @@ outline: deep
   other common core utility will now work by default on Windows, without extra
   setup. This is something we wanted to address for many many years, and it's
   finally being shipped!
-  [Read our blog post this the topic](https://taskfile.dev/blog/windows-core-utils).
+  [Read our blog post this the topic](https://taskr-io.vercel.app/blog/windows-core-utils).
   (#197, #2360 by @andreynering).
-- :sparkles: Built and deployed a [brand new website](https://taskfile.dev)
+- :sparkles: Built and deployed a [brand new website](https://taskr-io.vercel.app)
   using [VitePress](https://vitepress.dev) (#2359, #2369, #2371, #2375, #2378 by
   @vmaerten, @andreynering, @pd93).
 - Began releasing
@@ -138,7 +138,7 @@ outline: deep
   without having to install Go to build them (#2358 by @vmaerten).
 - Added support for global config files in `$XDG_CONFIG_HOME/task/taskrc.yml` or
   `$HOME/.taskrc.yml`. Check out our new
-  [configuration guide](https://taskfile.dev/docs/reference/config) for more
+  [configuration guide](https://taskr-io.vercel.app/docs/reference/config) for more
   details (#2247, #2380, #2390, #2391 by @vmaerten, @pd93).
 - Added experiments to the taskrc schema to clarify the expected keys and values
   (#2235 by @vmaerten).
@@ -194,7 +194,7 @@ Failed due to an issue with our release process.
 - Added `toYaml` and `fromYaml` templating functions (#2217, #2219 by @pd93).
 - Added `task` field the `--list --json` output (#2256 by @aleksandersh).
 - Added the ability to
-  [pin included taskfiles](https://taskfile.dev/next/experiments/remote-taskfiles/#manual-checksum-pinning)
+  [pin included taskfiles](https://taskr-io.vercel.app/next/experiments/remote-taskfiles/#manual-checksum-pinning)
   by specifying a checksum. This works with both local and remote Taskfiles
   (#2222, #2223 by @pd93).
 - When using the
@@ -237,13 +237,13 @@ Reverted the changes made in #2113 and #2186 that affected the
   #985, #1179).
 - The [Map Variables experiment](https://github.com/go-task/task/issues/1585)
   was made generally available so you can now
-  [define map variables in your Taskfiles!](https://taskfile.dev/usage/#variables)
+  [define map variables in your Taskfiles!](https://taskr-io.vercel.app/usage/#variables)
   (#1585, #1547, #2081 by @pd93).
 - Wildcards can now
-  [match multiple tasks](https://taskfile.dev/usage/#wildcard-arguments) (#2072,
+  [match multiple tasks](https://taskr-io.vercel.app/usage/#wildcard-arguments) (#2072,
   #2121 by @pd93).
 - Added the ability to
-  [loop over the files specified by the `generates` keyword](https://taskfile.dev/usage/#looping-over-your-tasks-sources-or-generated-files).
+  [loop over the files specified by the `generates` keyword](https://taskr-io.vercel.app/usage/#looping-over-your-tasks-sources-or-generated-files).
   This works the same way as looping over sources (#2151 by @sedyh).
 - Added the ability to resolve variables when defining an include variable
   (#2108, #2113 by @pd93).
@@ -325,7 +325,7 @@ Reverted the changes made in #2113 and #2186 that affected the
 - Refactored how task sorting functions work (#1798 by @pd93).
 - Added a new `.taskrc.yml` (or `.taskrc.yaml`) file to let users enable
   experiments (similar to `.env`) (#1982 by @vmaerten).
-- Added new [Getting Started docs](https://taskfile.dev/getting-started) (#2086
+- Added new [Getting Started docs](https://taskr-io.vercel.app/getting-started) (#2086
   by @pd93).
 - Allow `matrix` to use references to other variables (#2065, #2069 by @pd93).
 - Fixed a bug where, when a dynamic variable is provided, even if it is not
@@ -335,7 +335,7 @@ Reverted the changes made in #2113 and #2186 that affected the
 #### Package API
 
 Unlike our CLI tool,
-[Task's package API is not currently stable](https://taskfile.dev/reference/package).
+[Task's package API is not currently stable](https://taskr-io.vercel.app/reference/package).
 In an effort to ease the pain of breaking changes for our users, we will be
 providing changelogs for our package API going forwards. The hope is that these
 changes will provide a better long-term experience for our users and allow to
@@ -403,7 +403,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
   the `requires` section. (#1960, #1955, #1768 by @vmaerten and @mokeko)
 - The `CHECKSUM` and `TIMESTAMP` variables are now accessible within `cmds`
   (#1872 by @niklasr22).
-- Updated [installation docs](https://taskfile.dev/installation) and added pip
+- Updated [installation docs](https://taskr-io.vercel.app/installation) and added pip
   installation method (#935, #1989 by @pd93).
 - Fixed a bug where dynamic variables could not access environment variables
   (#630, #1869 by @rohm1 and @pd93).
@@ -428,7 +428,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 - Fixed a bug where multiple remote includes caused all prompts to display
   without waiting for user input (#1832, #1833 by @vmaerten and @pd93).
 - When using the
-  "[Remote Taskfiles](https://taskfile.dev/experiments/remote-taskfiles/)".
+  "[Remote Taskfiles](https://taskr-io.vercel.app/experiments/remote-taskfiles/)".
   experiment, you can now include Taskfiles from Git repositories (#1652 by
   @vmaerten).
 - Improved the error message when a dotenv file cannot be parsed (#1842 by
@@ -464,7 +464,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.39.0 - 2024-09-07
 
 - Added
-  [Env Precedence Experiment](https://taskfile.dev/experiments/env-precedence)
+  [Env Precedence Experiment](https://taskr-io.vercel.app/experiments/env-precedence)
   (#1038, #1633 by @vmaerten).
 - Added a CI lint job to ensure that the docs are updated correctly (#1719 by
   @vmaerten).
@@ -478,13 +478,13 @@ stabilize the API in the future. #121 now tracks this piece of work.
 - Added an option to declare an included Taskfile as flattened (#1704 by
   @vmaerten).
 - Added a new
-  [`--completion` flag](https://taskfile.dev/installation/#setup-completions) to
+  [`--completion` flag](https://taskr-io.vercel.app/installation/#setup-completions) to
   output completion scripts for various shells (#293, #1157 by @pd93).
   - This is now the preferred way to install completions.
   - The completion scripts in the `completion` directory
-    [are now deprecated](https://taskfile.dev/deprecations/completion-scripts/).
+    [are now deprecated](https://taskr-io.vercel.app/deprecations/completion-scripts/).
 - Added the ability to
-  [loop over a matrix of values](https://taskfile.dev/usage/#looping-over-a-matrix)
+  [loop over a matrix of values](https://taskr-io.vercel.app/usage/#looping-over-a-matrix)
   (#1766, #1767, #1784 by @pd93).
 - Fixed a bug in fish completion where aliases were not displayed (#1781, #1782
   by @vmaerten).
@@ -499,19 +499,19 @@ stabilize the API in the future. #121 now tracks this piece of work.
   @pd93).
 - Prefixed outputs will now be colorized by default (#1572 by
   @AlexanderArvidsson)
-- [References](https://taskfile.dev/usage/#referencing-other-variables) are now
+- [References](https://taskr-io.vercel.app/usage/#referencing-other-variables) are now
   generally available (no experiments required) (#1654 by @pd93).
 - Templating functions can now be used in references (#1645, #1654 by @pd93).
 - Added a new
-  [templating reference page](https://taskfile.dev/reference/templating/) to the
+  [templating reference page](https://taskr-io.vercel.app/reference/templating/) to the
   documentation (#1614, #1653 by @pd93).
 - If using the
-  [Map Variables experiment (1)](https://taskfile.dev/experiments/map-variables/?proposal=1),
+  [Map Variables experiment (1)](https://taskr-io.vercel.app/experiments/map-variables/?proposal=1),
   references are available by
-  [prefixing a string with a `#`](https://taskfile.dev/experiments/map-variables/?proposal=1#references)
+  [prefixing a string with a `#`](https://taskr-io.vercel.app/experiments/map-variables/?proposal=1#references)
   (#1654 by @pd93).
 - If using the
-  [Map Variables experiment (2)](https://taskfile.dev/experiments/map-variables/?proposal=2),
+  [Map Variables experiment (2)](https://taskr-io.vercel.app/experiments/map-variables/?proposal=2),
   the `yaml` and `json` keys are no longer available (#1654 by @pd93).
 - Added a new `TASK_REMOTE_DIR` environment variable to configure where cached
   remote Taskfiles are stored (#1661 by @vmaerten).
@@ -544,7 +544,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.37.0 - 2024-05-08
 
 - Released the
-  [Any Variables experiment](https://taskfile.dev/blog/any-variables), but
+  [Any Variables experiment](https://taskr-io.vercel.app/blog/any-variables), but
   [_without support for maps_](https://github.com/go-task/task/issues/1415#issuecomment-2044756925)
   (#1415, #1547 by @pd93).
 - Refactored how Task reads, parses and merges Taskfiles using a DAG (#1563,
@@ -557,7 +557,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 - Added support for `~` on ZSH completions (#1613 by @jwater7).
 - Added the ability to pass variables by reference using Go template syntax when
   the
-  [Map Variables experiment](https://taskfile.dev/experiments/map-variables/) is
+  [Map Variables experiment](https://taskr-io.vercel.app/experiments/map-variables/) is
   enabled (#1612 by @pd93).
 - Added support for environment variables in the templating engine in `includes`
   (#1610 by @vmaerten).
@@ -565,16 +565,16 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.36.0 - 2024-04-08
 
 - Added support for
-  [looping over dependencies](https://taskfile.dev/usage/#looping-over-dependencies)
+  [looping over dependencies](https://taskr-io.vercel.app/usage/#looping-over-dependencies)
   (#1299, #1541 by @pd93).
 - When using the
-  "[Remote Taskfiles](https://taskfile.dev/experiments/remote-taskfiles/)"
+  "[Remote Taskfiles](https://taskr-io.vercel.app/experiments/remote-taskfiles/)"
   experiment, you are now able to use
-  [remote Taskfiles as your entrypoint](https://taskfile.dev/experiments/remote-taskfiles/#root-remote-taskfiles).
+  [remote Taskfiles as your entrypoint](https://taskr-io.vercel.app/experiments/remote-taskfiles/#root-remote-taskfiles).
   - `includes` in remote Taskfiles will now also resolve correctly (#1347 by
     @pd93).
 - When using the
-  "[Any Variables](https://taskfile.dev/experiments/any-variables/)"
+  "[Any Variables](https://taskr-io.vercel.app/experiments/any-variables/)"
   experiments, templating is now supported in collection-type variables (#1477,
   #1511, #1526 by @pd93).
 - Fixed a bug where variables being passed to an included Taskfile were not
@@ -594,10 +594,10 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.35.0 - 2024-02-28
 
 - Added support for
-  [wildcards in task names](https://taskfile.dev/usage/#wildcard-arguments)
+  [wildcards in task names](https://taskr-io.vercel.app/usage/#wildcard-arguments)
   (#836, #1489 by @pd93).
 - Added the ability to
-  [run Taskfiles via stdin](https://taskfile.dev/usage/#reading-a-taskfile-from-stdin)
+  [run Taskfiles via stdin](https://taskr-io.vercel.app/usage/#reading-a-taskfile-from-stdin)
   (#655, #1483 by @pd93).
 - Bumped minimum Go version to 1.21 (#1500 by @pd93).
 - Fixed bug related to the `--list` flag (#1509, #1512 by @pd93, #1514, #1520 by
@@ -611,18 +611,18 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.34.1 - 2024-01-27
 
 - Fixed prompt regression on
-  [Remote Taskfiles experiment](https://taskfile.dev/experiments/remote-taskfiles/)
+  [Remote Taskfiles experiment](https://taskr-io.vercel.app/experiments/remote-taskfiles/)
   (#1486, #1487 by @pd93).
 
 ## v3.34.0 - 2024-01-25
 
 - Removed support for `version: 2` schemas. See the
-  [deprecation notice on our website](https://taskfile.dev/deprecations/version-2-schema)
+  [deprecation notice on our website](https://taskr-io.vercel.app/deprecations/version-2-schema)
   (#1197, #1447 by @pd93).
 - Fixed a couple of issues in the JSON Schema + added a CI step to ensure it's
   correct (#1471, #1474, #1476 by @sirosen).
 - Added
-  [Any Variables experiment proposal 2](https://taskfile.dev/experiments/any-variables/?proposal=2)
+  [Any Variables experiment proposal 2](https://taskr-io.vercel.app/experiments/any-variables/?proposal=2)
   (#1415, #1444 by @pd93).
 - Updated the experiments and deprecations documentation format (#1445 by
   @pd93).
@@ -646,7 +646,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.33.1 - 2023-12-21
 
 - Added support for looping over map variables with the
-  [Any Variables experiment](https://taskfile.dev/experiments/any-variables)
+  [Any Variables experiment](https://taskr-io.vercel.app/experiments/any-variables)
   enabled (#1435, #1437 by @pd93).
 - Fixed a bug where dynamic variables were causing errors during fast
   compilation (#1435, #1437 by @pd93)
@@ -654,7 +654,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.33.0 - 2023-12-20
 
 - Added
-  [Any Variables experiment](https://taskfile.dev/experiments/any-variables)
+  [Any Variables experiment](https://taskr-io.vercel.app/experiments/any-variables)
   (#1415, #1421 by @pd93).
 - Updated Docusaurus to v3 (#1432 by @pd93).
 - Added `aliases` to `--json` flag output (#1430, #1431 by @pd93).
@@ -666,10 +666,10 @@ stabilize the API in the future. #121 now tracks this piece of work.
 - Added ability to exclude some files from `sources:` by using `exclude:` (#225,
   #1324 by @pd93 and @andreynering).
 - The
-  [Remote Taskfiles experiment](https://taskfile.dev/experiments/remote-taskfiles)
+  [Remote Taskfiles experiment](https://taskr-io.vercel.app/experiments/remote-taskfiles)
   now prefers remote files over cached ones by default (#1317, #1345 by @pd93).
 - Added `--timeout` flag to the
-  [Remote Taskfiles experiment](https://taskfile.dev/experiments/remote-taskfiles)
+  [Remote Taskfiles experiment](https://taskr-io.vercel.app/experiments/remote-taskfiles)
   (#1317, #1345 by @pd93).
 - Fix bug where dynamic `vars:` and `env:` were being executed when they should
   actually be skipped by `platforms:` (#1273, #1377 by @andreynering).
@@ -681,7 +681,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.31.0 - 2023-10-07
 
 - Enabled the `--yes` flag for the
-  [Remote Taskfiles experiment](https://taskfile.dev/experiments/remote-taskfiles)
+  [Remote Taskfiles experiment](https://taskr-io.vercel.app/experiments/remote-taskfiles)
   (#1317, #1344 by @pd93).
 - Add ability to set `watch: true` in a task to automatically run it in watch
   mode (#231, #1361 by @andreynering).
@@ -689,7 +689,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
   `.github`), for example, were also being ignored (#1356 by @butuzov).
 - Fixed a nil pointer error when running a Taskfile with no contents (#1341,
   #1342 by @pd93).
-- Added a new [exit code](https://taskfile.dev/api/#exit-codes) (107) for when a
+- Added a new [exit code](https://taskr-io.vercel.app/api/#exit-codes) (107) for when a
   Taskfile does not contain a schema version (#1342 by @pd93).
 - Increased limit of maximum task calls from 100 to 1000 for now, as some people
   have been reaching this limit organically now that we have loops. This check
@@ -708,7 +708,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 
 - Prep work for Remote Taskfiles (#1316 by @pd93).
 - Added the
-  [Remote Taskfiles experiment](https://taskfile.dev/experiments/remote-taskfiles)
+  [Remote Taskfiles experiment](https://taskr-io.vercel.app/experiments/remote-taskfiles)
   as a draft (#1152, #1317 by @pd93).
 - Improve performance of content checksumming on `sources:` by replacing md5
   with [XXH3](https://xxhash.com/) which is much faster. This is a soft breaking
@@ -731,7 +731,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 ## v3.28.0 - 2023-07-24
 
 - Added the ability to
-  [loop over commands and tasks](https://taskfile.dev/usage/#looping-over-values)
+  [loop over commands and tasks](https://taskr-io.vercel.app/usage/#looping-over-values)
   using `for` (#82, #1220 by @pd93).
 - Fixed variable propagation in multi-level includes (#778, #996, #1256 by
   @hudclark).
@@ -751,10 +751,10 @@ stabilize the API in the future. #121 now tracks this piece of work.
   - e.g. `taskfile.yml`, `taskfile.yaml`, `taskfile.dist.yml` &
     `taskfile.dist.yaml`
 - Bug fixes were made to the
-  [npm installation method](https://taskfile.dev/installation/#npm). (#1190, by
+  [npm installation method](https://taskr-io.vercel.app/installation/#npm). (#1190, by
   @sounisi5011).
 - Added the
-  [gentle force experiment](https://taskfile.dev/experiments/gentle-force) as a
+  [gentle force experiment](https://taskr-io.vercel.app/experiments/gentle-force) as a
   draft (#1200, #1216 by @pd93).
 - Added an `--experiments` flag to allow you to see which experiments are
   enabled (#1242 by @pd93).
@@ -765,13 +765,13 @@ stabilize the API in the future. #121 now tracks this piece of work.
 
 - Only rewrite checksum files in `.task` if the checksum has changed (#1185,
   #1194 by @deviantintegral).
-- Added [experiments documentation](https://taskfile.dev/experiments) to the
+- Added [experiments documentation](https://taskr-io.vercel.app/experiments) to the
   website (#1198 by @pd93).
 - Deprecated `version: 2` schema. This will be removed in the next major release
   (#1197, #1198, #1199 by @pd93).
 - Added a new `prompt:` prop to set a warning prompt to be shown before running
   a potential dangerous task (#100, #1163 by @MaxCheetham,
-  [Documentation](https://taskfile.dev/usage/#warning-prompts)).
+  [Documentation](https://taskr-io.vercel.app/usage/#warning-prompts)).
 - Added support for single command task syntax. With this change, it's now
   possible to declare just `cmd:` in a task, avoiding the more complex
   `cmds: []` when you have only a single command for that task (#1130, #1131 by
@@ -804,7 +804,7 @@ stabilize the API in the future. #121 now tracks this piece of work.
 - Enforce [gofumpt](https://github.com/mvdan/gofumpt) linter (#1099 by @pd93)
 - Add `--sort` flag for use with `--list` and `--list-all` (#946, #1105 by
   @pd93).
-- Task now has [custom exit codes](https://taskfile.dev/api/#exit-codes)
+- Task now has [custom exit codes](https://taskr-io.vercel.app/api/#exit-codes)
   depending on the error (#1114 by @pd93).
 
 ## v3.23.0 - 2023-03-26
@@ -823,7 +823,7 @@ it a go and let us know what you think via a
 
 - The website was integrated with
   [Crowdin](https://crowdin.com/project/taskfile) to allow the community to
-  contribute with translations! [Chinese](https://taskfile.dev/zh-Hans/) is the
+  contribute with translations! [Chinese](https://taskr-io.vercel.app/zh-Hans/) is the
   first language available (#1057, #1058 by @misitebao).
 - Added task location data to the `--json` flag output (#1056 by @pd93)
 - Change the name of the file generated by `task --init` from `Taskfile.yaml` to
@@ -840,7 +840,7 @@ it a go and let us know what you think via a
 - Add a brand new `--global` (`-g`) flag that will run a Taskfile from your
   `$HOME` directory. This is useful to have automation that you can run from
   anywhere in your system!
-  ([Documentation](https://taskfile.dev/usage/#running-a-global-taskfile), #1029
+  ([Documentation](https://taskr-io.vercel.app/usage/#running-a-global-taskfile), #1029
   by @andreynering).
 - Add ability to set `error_only: true` on the `group` output mode. This will
   instruct Task to only print a command output if it returned with a non-zero
@@ -871,7 +871,7 @@ it a go and let us know what you think via a
   and
   [`shopt`](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)
   builtins (#908, #929 by @pd93,
-  [Documentation](http://taskfile.dev/usage/#set-and-shopt)).
+  [Documentation](http://taskr-io.vercel.app/usage/#set-and-shopt)).
 - Add new `platforms:` attribute to `task` and `cmd`, so it's now possible to
   choose in which platforms that given task or command will be run on. Possible
   values are operating system (GOOS), architecture (GOARCH) or a combination of
@@ -948,7 +948,7 @@ it a go and let us know what you think via a
 
 - Add new special variables `ROOT_DIR` and `TASKFILE_DIR`. This was a highly
   requested feature (#215, #857,
-  [Documentation](https://taskfile.dev/api/#special-variables)).
+  [Documentation](https://taskr-io.vercel.app/api/#special-variables)).
 - Follow symlinks on `sources` (#826, #831).
 - Improvements and fixes to Bash completion (#835, #844).
 
@@ -997,18 +997,18 @@ it a go and let us know what you think via a
   Taskfiles can also include other Taskfiles. Before this was limited to one
   level (#390, #623, #656).
 - Add ability to specify vars when including a Taskfile.
-  [Check out the documentation](https://taskfile.dev/#/usage?id=vars-of-included-taskfiles)
+  [Check out the documentation](https://taskr-io.vercel.app/#/usage?id=vars-of-included-taskfiles)
   for more information (#677).
 
 ## v3.11.0 - 2022-02-19
 
 - Task now supports printing begin and end messages when using the `group`
   output mode, useful for grouping tasks in CI systems.
-  [Check out the documentation](http://taskfile.dev/#/usage?id=output-syntax)
+  [Check out the documentation](http://taskr-io.vercel.app/#/usage?id=output-syntax)
   for more information (#647, #651).
 - Add `Taskfile.dist.yml` and `Taskfile.dist.yaml` to the supported file name
   list.
-  [Check out the documentation](https://taskfile.dev/#/usage?id=supported-file-names)
+  [Check out the documentation](https://taskr-io.vercel.app/#/usage?id=supported-file-names)
   for more information (#498, #666).
 
 ## v3.10.0 - 2022-01-04
@@ -1018,7 +1018,7 @@ it a go and let us know what you think via a
   (#383, #401).
 - It's now possible to schedule cleanup commands to run once a task finishes
   with the `defer:` keyword
-  ([Documentation](https://taskfile.dev/#/usage?id=doing-task-cleanup-with-defer),
+  ([Documentation](https://taskr-io.vercel.app/#/usage?id=doing-task-cleanup-with-defer),
   #475, #626).
 - Remove long deprecated and undocumented `$` variable prefix and `^` command
   prefix (#642, #644, #645).
@@ -1260,10 +1260,10 @@ it a go and let us know what you think via a
 
 ## v2.5.0 - 2019-03-16
 
-- We moved from the taskfile.org domain to the new fancy taskfile.dev domain.
+- We moved from the taskfile.org domain to the new fancy taskr-io.vercel.app domain.
   While stuff is being redirected, we strongly recommend to everyone that use
-  [this install script](https://taskfile.dev/#/installation?id=install-script)
-  to use the new taskfile.dev domain on scripts from now on.
+  [this install script](https://taskr-io.vercel.app/#/installation?id=install-script)
+  to use the new taskr-io.vercel.app domain on scripts from now on.
 - Fixed to the ZSH completion (#182).
 - Add
   [`--summary` flag along with `summary:` task attribute](https://taskfile.org/#/usage?id=display-summary-of-task)

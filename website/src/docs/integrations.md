@@ -36,7 +36,7 @@ This was initially created by @KROSF in
 [this Gist](https://gist.github.com/KROSF/c5435acf590acd632f71bb720f685895) and
 is now officially maintained in
 [this file](https://github.com/go-task/task/blob/main/website/src/public/schema.json)
-and made available at https://taskfile.dev/schema.json. This schema can be used
+and made available at https://taskr-io.vercel.app/schema.json. This schema can be used
 to validate Taskfiles and provide autocompletion in many code editors:
 
 ### Visual Studio Code
@@ -52,7 +52,7 @@ to your `settings.json`:
 // settings.json
 {
   "yaml.schemas": {
-    "https://taskfile.dev/schema.json": [
+    "https://taskr-io.vercel.app/schema.json": [
       "**/Taskfile.yml",
       "./path/to/any/other/taskfile.yml"
     ]
@@ -64,7 +64,7 @@ You can also configure the schema directly inside of a Taskfile by adding the
 following comment to the top of the file:
 
 ```yaml
-# yaml-language-server: $schema=https://taskfile.dev/schema.json
+# yaml-language-server: $schema=https://taskr-io.vercel.app/schema.json
 version: '3'
 ```
 
@@ -86,8 +86,8 @@ This integration provides:
 
 AI assistants can access Task documentation through:
 
-- **[llms.txt](https://taskfile.dev/llms.txt)**: Lightweight overview of Task documentation
-- **[llms-full.txt](https://taskfile.dev/llms-full.txt)**: Complete documentation with all content
+- **[llms.txt](https://taskr-io.vercel.app/llms.txt)**: Lightweight overview of Task documentation
+- **[llms-full.txt](https://taskr-io.vercel.app/llms-full.txt)**: Complete documentation with all content
 
 These files are automatically generated and kept in sync with the documentation,
 ensuring AI assistants always have access to the latest Task features and usage

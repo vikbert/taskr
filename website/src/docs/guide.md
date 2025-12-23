@@ -468,7 +468,7 @@ includes:
 Vars declared in the included Taskfile have preference over the variables in the
 including Taskfile! If you want a variable in an included Taskfile to be
 overridable, use the
-[default function](https://sprig.taskfile.dev/defaults.html):
+[default function](https://sprig.taskr-io.vercel.app/defaults.html):
 <span v-pre>`MY_VAR: '{{.MY_VAR | default "my-default-value"}}'`</span>.
 
 :::

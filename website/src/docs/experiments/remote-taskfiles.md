@@ -234,7 +234,7 @@ version: '3'
 
 includes:
   included:
-    taskfile: https://taskfile.dev
+    taskfile: https://taskr-io.vercel.app
     checksum: c153e97e0b3a998a7ed2e61064c6ddaddd0de0c525feefd6bba8569827d8efe9
 ```
 

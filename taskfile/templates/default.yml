@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://taskfile.dev/schema.json
+# yaml-language-server: $schema=https://taskr-io.vercel.app/schema.json
 
 version: '3'
 

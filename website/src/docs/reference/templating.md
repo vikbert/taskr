@@ -12,7 +12,7 @@ Task's templating engine uses Go's
 [text/template](https://pkg.go.dev/text/template) package to interpolate values.
 This reference covers the main features and all available functions for creating
 dynamic Taskfiles. Most of the provided functions come from the
-[slim-sprig](https://sprig.taskfile.dev/) library.
+[slim-sprig](https://sprig.taskr-io.vercel.app/) library.
 
 ## Basic Usage
 

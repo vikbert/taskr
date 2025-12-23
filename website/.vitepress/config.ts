@@ -21,12 +21,12 @@ const version = readFileSync(
 const urlVersion =
   process.env.NODE_ENV === 'development'
     ? {
-        current: 'https://taskfile.dev/',
+        current: 'https://taskr-io.vercel.app/',
         next: 'http://localhost:3002/'
       }
     : {
-        current: 'https://taskfile.dev/',
-        next: 'https://next.taskfile.dev/'
+        current: 'https://taskr-io.vercel.app/',
+        next: 'https://next.taskr-io.vercel.app/'
       };
 
 // https://vitepress.dev/reference/site-config
@@ -82,7 +82,7 @@ export default defineConfig({
       "script",
       {
         defer: "",
-        src: "https://u.taskfile.dev/script.js",
+        src: "https://u.taskr-io.vercel.app/script.js",
         "data-website-id": "084030b0-0e3f-4891-8d2a-0c12c40f5933"
       }
     ]
@@ -91,7 +91,7 @@ export default defineConfig({
     const head: HeadConfig[] = []
 
     // Canonical URL dynamique
-    const canonicalUrl = `https://taskfile.dev/${pageData.relativePath
+    const canonicalUrl = `https://taskr-io.vercel.app/${pageData.relativePath
       .replace(/\.md$/, '')
       .replace(/index$/, '')}`
     head.push(['link', { rel: 'canonical', href: canonicalUrl }])
@@ -354,7 +354,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/go-task/task' },
       { icon: 'discord', link: 'https://discord.gg/6TY36E39UK' },
       { icon: 'x', link: 'https://twitter.com/taskfiledev' },
-      { icon: 'bluesky', link: 'https://bsky.app/profile/taskfile.dev' },
+      { icon: 'bluesky', link: 'https://bsky.app/profile/taskr-io.vercel.app' },
       { icon: 'mastodon', link: 'https://fosstodon.org/@task' }
     ],
 
@@ -364,7 +364,7 @@ export default defineConfig({
     }
   },
   sitemap: {
-    hostname: 'https://taskfile.dev',
+    hostname: 'https://taskr-io.vercel.app',
     transformItems: (items) => {
       return items.map((item) => ({
         ...item,
