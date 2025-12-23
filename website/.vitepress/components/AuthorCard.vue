@@ -23,10 +23,9 @@
 </template>
 
 <script setup>
-import { team } from '../team.ts';
-import { computed } from 'vue';
+import { computed } from "vue";
 const props = defineProps({
-  author: String
+  author: String,
 });
 
 const author = computed(() => {

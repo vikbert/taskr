@@ -2,10 +2,9 @@
 layout: home
 hero:
   name: Taskr
-  text: The Rich Task Runner
+  text: Task++ Runner for Gophers
   tagline:
-    A rich, cross-platform build tool inspired by Task, designed for modern
-    workflows.
+    Where Tasks Meet Elegance
   image:
     src: /img/logo.png
     alt: Taskr logo
@@ -21,26 +20,31 @@ hero:
       link: /docs/guide
 
 features:
-  - title: 30-Second Setup
+  - title: Task Category
+    icon:
+      src: /img/category.png
+      alt: Task Category
     details:
-      Single binary download, zero dependencies. Works with Homebrew, Snapcraft,
-      Scoop and more.
-    icon: 🚀
+      Organize related tasks into category for cleaner Taskfiles and easier navigation. Keep complex workflows neat and hackable.
+  - title: Indexed Ordering
+    icon:
+      src: /img/index.png
+      alt: Task Category
+    details:
+      Control task execution order with simple indexes. No more guessing — your tasks run exactly how you design them.
 
-  - title: Truly cross-platform
-    icon: 🖥️
-    details:
-      Run the same Taskfile on Linux, macOS and Windows. No extra setup. Taskr
-      handles platform quirks so you don’t have to.
 
-  - title: Smart Caching
-    icon: 🎯
+  - title: Elegant Banners
+    icon:
+      src: /img/slogan.png
+      alt: Task Category
     details:
-      Skip unnecessary rebuilds by tracking file changes (timestamp or
-      content-based).
+      Beautiful, eye-catching banners for every run. Make your CLI output a joy to read, not just logs to scroll.
 
   - title: Ideal for code generation & scaffolding
-    icon: ⚡
+    icon:
+      src: /img/code.png
+      alt: Task Category
     details:
       Use Taskr to wire up codegen tools, formatters, linters, or anything
       repetitive. Chain commands, set dependencies, and keep your workflow

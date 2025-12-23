@@ -145,3 +145,18 @@ img[src*='custom-icon-badges.demolab.com'] {
 .VPTeamPage > .VPTeamPageTitle {
   padding-top: 0
 }
+html.dark .VPFeature .icon img {
+  filter: brightness(0) invert(1);
+}
+
+html.dark .VPFeature img {
+  filter: brightness(0) invert(1);
+}
+
+.VPFeature {
+  background-color: #dcf8f5 !important;
+}
+
+html.dark .VPFeature {
+  background-color: #252528 !important;
+}

@@ -48,8 +48,8 @@ export default defineConfig({
       {
         rel: 'icon',
         sizes: 'any',
-        type: 'image/svg+xml',
-        href: '/img/logo.svg'
+        type: 'image/png',
+        href: '/img/logo.png'
       }
     ],
     // Open Graph
@@ -146,7 +146,7 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/img/logo.svg',
+    logo: '/img/logo.png',
     carbonAds: {
       code: 'CESI65QJ',
       placement: 'taskfiledev'
