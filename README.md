@@ -1,10 +1,9 @@
 <div align="center">
-  <a href="#">
+  <a href="https://taskr-io.vercel.app/">
     <img src="website/src/public/img/intro.png" width="100%"/>
   </a>
 </div>
 
----
 
 ## 🚀 Quick Start
 
