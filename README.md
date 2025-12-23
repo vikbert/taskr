@@ -1,15 +1,7 @@
 <div align="center">
   <a href="#">
-    <img src="website/src/public/img/logo.jpg" width="200px" height="200px" />
+    <img src="website/src/public/img/intro.png" width="100%"/>
   </a>
-
-  <h1>Taskr</h1>
-
-  <p>
-    A high-performance golang task runner <br>extended from <b>vikbert/taskr</b> <br> with the rich enhancements.
-  </p>
-
-  <img src="website/src/public/img/taskr.png" alt="taskr_comparision"/>
 </div>
 
 ---
