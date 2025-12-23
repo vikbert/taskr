@@ -8,7 +8,6 @@ import {
   groupIconVitePlugin,
   localIconLoader
 } from 'vitepress-plugin-group-icons';
-import { team } from './team.ts';
 import { taskDescription, taskName, ogUrl, ogImage } from './meta.ts';
 import { fileURLToPath, URL } from 'node:url';
 import llmstxt, { copyOrDownloadAsMarkdownButtons } from 'vitepress-plugin-llms';
@@ -53,10 +52,6 @@ export default defineConfig({
         href: '/img/logo.svg'
       }
     ],
-    [
-      'meta',
-      { name: 'author', content: `${team.map((c) => c.name).join(', ')}` }
-    ],
     // Open Graph
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: taskName }],
@@ -65,11 +60,6 @@ export default defineConfig({
     ['meta', { property: 'og:image', content: ogImage }],
     ['meta', { property: 'og:url', content: ogUrl }],
     // Twitter Card
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:site', content: '@taskfiledev' }],
-    ['meta', { name: 'twitter:title', content: taskName }],
-    ['meta', { name: 'twitter:description', content: taskDescription }],
-    ['meta', { name: 'twitter:image', content: ogImage }],
     [
       'meta',
       {

@@ -338,10 +338,10 @@ End of functions from https://github.com/client9/shlib
 ------------------------------------------------------------------------
 EOF
 
-PROJECT_NAME="task"
-OWNER=go-task
+PROJECT_NAME="taskr"
+OWNER=vikbert
 REPO="task"
-BINARY=task
+BINARY=taskr
 FORMAT=tar.gz
 OS=$(uname_os)
 ARCH=$(uname_arch)
