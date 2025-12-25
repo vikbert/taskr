@@ -6,11 +6,11 @@ outline: deep
 
 # Installation
 
-Task offers many installation methods. Check out the available methods below.
+Taskr offers many installation methods. Check out the available methods below.
 
 ## Official Package Managers
 
-These installation methods are maintained by the Task team and are always
+These installation methods are maintained by the Taskr team and are always
 up-to-date.
 
 ### [dnf](https://docs.fedoraproject.org/en-US/quick-docs/dnf) ![Fedora](https://img.shields.io/badge/Fedora-51A2DA?logo=fedora&logoColor=fff) ![CentOS](https://img.shields.io/badge/CentOS-002260?logo=centos&logoColor=F0F0F0) ![Fedora](https://img.shields.io/badge/Red_Hat-EE0000?logo=redhat&logoColor=white) {#dnf}
@@ -47,7 +47,7 @@ apt install task
 
 ### [Homebrew](https://brew.sh) ![macOS](https://img.shields.io/badge/MacOS-000000?logo=apple&logoColor=F0F0F0) ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black) {#homebrew}
 
-Task is available via our official Homebrew tap
+Taskr is available via our official Homebrew tap
 [[source](https://github.com/go-task/homebrew-tap/blob/main/Formula/go-task.rb)]:
 
 ```shell
@@ -76,7 +76,7 @@ sudo snap install task --classic
 
 ### [npm](https://www.npmjs.com) ![macOS](https://img.shields.io/badge/MacOS-000000?logo=apple&logoColor=F0F0F0) ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black) ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) {#npm}
 
-Npm can be used as cross-platform way to install Task globally or as a
+Npm can be used as cross-platform way to install Taskr globally or as a
 dependency of your project
 [[package](https://www.npmjs.com/package/@go-task/cli)]
 [[source](https://github.com/vikbert/taskr/blob/main/package.json)]:
@@ -87,7 +87,7 @@ npm install -g @go-task/cli
 
 ### [WinGet](https://github.com/microsoft/winget-cli) ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) {#winget}
 
-Task is available via the
+Taskr is available via the
 [community repository](https://github.com/microsoft/winget-pkgs)
 [[source](https://github.com/microsoft/winget-pkgs/tree/master/manifests/t/Task/Task)]:
 
@@ -100,8 +100,8 @@ winget install Task.Task
 ::: warning Community Maintained
 
 These installation methods are maintained by the community and may not always be
-up-to-date with the latest Task version. The Task team does not directly control
-these packages.
+up-to-date with the latest Taskr version. The Taskr team does not directly
+control these packages.
 
 :::
 
@@ -110,7 +110,7 @@ these packages.
 Mise is a cross-platform package manager that acts as a "frontend" to a variety
 of other package managers "backends" such as `asdf`, `aqua` and `ubi`.
 
-If using Mise, we recommend using the `aqua` or `ubi` backends to install Task
+If using Mise, we recommend using the `aqua` or `ubi` backends to install Taskr
 as these install directly from our GitHub releases.
 
 ::: code-group
@@ -282,7 +282,7 @@ sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d -b ~/.lo
 ### GitHub Actions
 
 We have an [official GitHub Action](https://github.com/go-task/setup-task) to
-install Task in your GitHub workflows. This repository is forked from the
+install Taskr in your GitHub workflows. This repository is forked from the
 fantastic project by the Arduino team. Check out the repository for more
 examples and configuration.
 

@@ -156,8 +156,8 @@ silent: true
 
 - **Type**: `bool`
 - **Default**: `false`
-- **Description**: If true, displays a banner with project name(default:'Taskr') and version number
-  before listing tasks
+- **Description**: If true, displays a banner with project name(default:'Taskr')
+  and version number before listing tasks
 
 ```yaml
 banner: true
