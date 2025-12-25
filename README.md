@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://taskr-io.vercel.app/">
-    <img src="website/src/public/img/logo.png" width="250px"/>
+    <img src="website/src/public/img/intro.png" width="100%"/>
   </a>
 
   <h4>Task++ runner for gophers</h4>
