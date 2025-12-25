@@ -10,21 +10,25 @@
 
 Get started with Taskr in just a few commands:
 
+#### install via brew
 ```bash
-
-## install via brew
 brew tap vikbert/taskr
 brew install taskr
+```
 
-## install via go
+#### install via go
+```
 go install github.com/vikbert/taskr/v3/cmd/taskr@latest
+```
 
-## install via shell
+#### install via shell
+```
 sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d
+```
 
-## install via binary
+#### install via binary
+```
 open https://github.com/vikbert/taskr/releases
-
 ```
 
 ## 🛠️ Development
@@ -46,7 +50,7 @@ task gotestsum:install
   <a href="https://taskr-io.vercel.app/">
     <img src="website/src/public/img/taskr.png" width="100%"/>
   </a>
-  
+
 - ✅ **Performance Optimization** - Pre-allocated capacity, fast paths, 30% improvement for large project lists
 - ✅ **New Category** - Categorize the related tasks by using category
 - ✅ **New Index** - Order the tasks by index
