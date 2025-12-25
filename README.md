@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://taskr-io.vercel.app/">
-    <img src="website/src/public/img/logo.png" width="180px"/>
+    <img src="website/src/public/img/logo.png" width="250px"/>
   </a>
 
   <h4>Task++ runner for gophers</h4>
@@ -52,39 +52,8 @@ task gotestsum:install
 - ✅ **Performance Optimization** - Pre-allocated capacity, fast paths, 30% improvement for large project lists
 - ✅ **New Category** - Categorize the related tasks by using category
 - ✅ **New Index** - Order the tasks by index
+- ✅ **New banner printing** - Print project name as project banner
 
-## 📦 Packaging & Distribution
-
-Taskr is distributed through multiple package managers. For information on publishing to package managers after releases, see:
-
-- [Package Manager Publishing Guide](PACKAGING.md)
-- [Installation Documentation](website/src/docs/installation.md)
-
-### Release Process
-
-```bash
-# Prepare and create a release
-taskr release:patch  # or release:minor/release:major
-
-# Publish to package managers (manual steps)
-taskr release:package-managers
-```
-
-
-```yml
-test:all:
-  category: test
-  desc: Runs test suite with signals and watch tests included
-  deps: [sleepit:build, gotestsum:install]
-  cmds:
-    - gotestsum -f '{{.GOTESTSUM_FORMAT}}' -tags 'signals watch' ./...
-
-goreleaser:test:
-  category: release
-  desc: Tests release process without publishing
-  cmds:
-    - goreleaser --snapshot --clean
-```
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
