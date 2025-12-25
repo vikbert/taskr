@@ -152,6 +152,34 @@ tasks:
 silent: true
 ```
 
+### `banner`
+
+- **Type**: `bool`
+- **Default**: `false`
+- **Description**: If true, displays a banner with 'TaskR' and version number before listing tasks
+
+```yaml
+banner: true
+```
+
+### `project`
+
+- **Type**: `string`
+- **Description**: The name of the current project, displayed in the banner when available
+
+```yaml
+project: MyAwesomeProject
+```
+
+### `categories`
+
+- **Type**: `[]string`
+- **Description**: A list of categories that defines the order in which task categories are displayed when listing tasks. Tasks without a category are grouped under 'general' and displayed first
+
+```yaml
+categories: ["build", "test", "deploy"]
+```
+
 ### `dotenv`
 
 - **Type**: `[]string`
@@ -504,6 +532,28 @@ tasks:
     summary: |
       Deploy the application to production environment.
       This includes building, testing, and uploading artifacts.
+```
+
+#### `index`
+
+- **Type**: `number`
+- **Description**: Optional index for ordering tasks within categories. Tasks are sorted by index value (ascending), then by YAML position for tasks with the same index or no index
+
+```yaml
+tasks:
+  build:
+    category: build
+    index: 1
+    desc: Build the project
+    cmds:
+      - go build ./...
+
+  test:
+    category: build
+    index: 2
+    desc: Run tests
+    cmds:
+      - go test ./...
 ```
 
 #### `prompt`

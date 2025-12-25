@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=./website/src/public/schema.json
+# yaml-language-server: $schema=https://taskr-io.vercel.app/schema.json
 version: '3'
 banner: true
 categories: ["core"]
