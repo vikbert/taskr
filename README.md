@@ -3,12 +3,6 @@
     <img src="website/src/public/img/intro.png" width="100%"/>
   </a>
 
-  <h4>Task++ runner for gophers</h4>
-  <p>where tasks meet elegance</p>
-
-  <a href="https://taskr-io.vercel.app/">
-    <img src="website/src/public/img/taskr.png" width="100%"/>
-  </a>
 </div>
 
 
@@ -49,6 +43,10 @@ task gotestsum:install
 
 ## 🎯 Key Enhancements
 
+  <a href="https://taskr-io.vercel.app/">
+    <img src="website/src/public/img/taskr.png" width="100%"/>
+  </a>
+  
 - ✅ **Performance Optimization** - Pre-allocated capacity, fast paths, 30% improvement for large project lists
 - ✅ **New Category** - Categorize the related tasks by using category
 - ✅ **New Index** - Order the tasks by index
