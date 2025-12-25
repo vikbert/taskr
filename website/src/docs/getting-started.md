@@ -6,13 +6,13 @@ outline: deep
 
 # Getting Started
 
-The following guide will help introduce you to the basics of Task. We'll cover
+The following guide will help introduce you to the basics of Taskr. We'll cover
 how to create a Taskfile, how to write a basic task and how to call it. If you
-haven't installed Task yet, head over to our [installation guide](installation).
+haven't installed Taskr yet, head over to our [installation guide](installation).
 
 ## Creating your first Taskfile
 
-Once Task is installed, you can create your first Taskfile by running:
+Once Taskr is installed, you can create your first Taskfile by running:
 
 ```shell
 taskr --init
@@ -50,7 +50,7 @@ tasks:
 ```
 
 As you can see, all Taskfiles are written in [YAML format](https://yaml.org/).
-The `version` attribute specifies the minimum version of Task that can be used
+The `version` attribute specifies the minimum version of Taskr that can be used
 to run this file. The `vars` attribute is used to define variables that can be
 used in tasks. In this case, we are creating a string variable called `GREETING`
 with a value of `Hello, World!`.
@@ -63,7 +63,7 @@ the commands.
 
 ## Calling a task
 
-To call the task, invoke `task` followed by the name of the task you want to
+To call the task, invoke `taskr` followed by the name of the task you want to
 run. In this case, the name of the task is `default`, so you should run:
 
 ```shell
@@ -97,7 +97,7 @@ Let's create a task to build a program in Go. Start by adding a new task called
 `build` below the existing `default` task. We can then add a `cmds` attribute
 with a single command to build the program.
 
-Task uses [mvdan/sh](https://github.com/mvdan/sh), a native Go sh interpreter.
+Taskr uses [mvdan/sh](https://github.com/mvdan/sh), a native Go sh interpreter.
 So you can write sh/bash-like commands - even in environments where `sh` or
 `bash` are usually not available (like Windows). Just remember any executables
 called must be available as a built-in or in the system's `PATH`.
@@ -152,11 +152,11 @@ tasks:
 Call the task by running:
 
 ```shell
-task build
+taskr build
 ```
 
 That's about it for the basics, but there's _so much_ more that you can do with
-Task. Check out the rest of the documentation to learn more about all the
-features Task has to offer! We recommend taking a look at the
+Taskr. Check out the rest of the documentation to learn more about all the
+features Taskr has to offer! We recommend taking a look at the
 [usage guide](/docs/guide) next. Alternatively, you can check out our reference
 docs for the [Taskfile schema](reference/schema) and [CLI](reference/cli).
