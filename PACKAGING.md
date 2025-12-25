@@ -4,7 +4,7 @@ This document provides step-by-step instructions for publishing Taskr to various
 
 ## Prerequisites
 
-- [x] Release created with: `taskr publish:<version>` (includes validation) OR `taskr release:<version>`
+- [x] Release created with: `taskr release:<version>`
 - [x] GoReleaser CI completed: https://github.com/vikbert/taskr/actions/workflows/release.yml
 - [x] Release tag created and pushed to GitHub
 - [x] Release artifacts available on GitHub Releases

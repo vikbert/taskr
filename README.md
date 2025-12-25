@@ -51,41 +51,6 @@ Taskr is distributed through multiple package managers. For information on publi
 
 ### Release Process
 
-#### Option 1: Complete Automated Workflow (Recommended)
-```bash
-# Full validation publishing
-taskr publish:patch  # or publish:minor/publish:major
-```
-
-**Benefits:**
-- ✅ Runs full test suite before release
-- ✅ Includes comprehensive linting checks
-- ✅ Provides clear next-steps guidance
-- ✅ Single command for complete workflow
-
-#### Option 2: Quick Publishing (Skips Linting)
-```bash
-# Skip linting for faster publishing
-taskr publish:quick:patch  # or publish:quick:minor/publish:quick:major
-```
-
-**Use when:**
-- Code quality is already verified
-- You want faster release cycles
-- Linting issues are known and acceptable
-
-#### Option 3: Emergency Publishing (Tests Only)
-```bash
-# Emergency release - tests only, no quality checks
-taskr publish:emergency:patch  # or publish:emergency:minor/publish:emergency:major
-```
-
-**Use when:**
-- Urgent release needed
-- Known linting issues blocking release
-- Code quality assurance done separately
-
-#### Option 2: Manual Step-by-Step
 ```bash
 # Prepare and create a release
 taskr release:patch  # or release:minor/release:major

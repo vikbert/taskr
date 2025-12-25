@@ -249,7 +249,7 @@ tasks:
     desc: Runs test suite with signals and watch tests included
     deps: [sleepit:build, gotestsum:install]
     cmds:
-      - gotestsum -f '{{.GOTESTSUM_FORMAT}}' -- -tags 'signals watch' ./...
+      - gotestsum -f '{{.GOTESTSUM_FORMAT}}' -tags 'signals watch' ./...
 
   goreleaser:test:
     category: release
@@ -318,7 +318,7 @@ tasks:
         Please wait for the CI to finish and then do the following:
 
         - Copy the changelog for v{{.VERSION}} to the GitHub release
-        - Update and push the snapcraft manifest in https://github.com/vikbert/snap/blob/main/snap/snapcraft.yaml
+        - Run 'taskr release:package-managers' to publish to package managers
     preconditions:
       - sh: test $(git rev-parse --abbrev-ref HEAD) = "main"
         msg: "You must be on the main branch to release"
@@ -337,63 +337,89 @@ tasks:
       - cmd: printf "%s" '{{.COMPLETE_MESSAGE}}'
         silent: true
 
-  publish:*:
+  release:package-managers:
     category: release
-    desc: Complete publishing workflow with pre-release validation
+    desc: Manual steps to publish Taskr to various package managers
     summary: |
-      Enhanced release workflow that includes pre-release validation.
+      This task provides step-by-step instructions for manually publishing Taskr
+      to various package managers after a release has been created.
 
-      Usage: taskr publish:<version>
+      Required: Run this after 'taskr release:<version>' has completed and GoReleaser has finished.
     cmds:
-      - cmd: echo "🚀 Starting validated publish workflow..."
+      - cmd: echo "🚀 Taskr Package Manager Publishing Guide"
         silent: true
-      - cmd: echo "📋 Running pre-release validation..."
+      - cmd: |
+          echo ""
+          echo "📋 Prerequisites:"
+          echo "   - Release created with: taskr release:<version>"
+          echo "   - GoReleaser CI completed: https://github.com/vikbert/taskr/actions/workflows/release.yml"
+          echo "   - Release tag created and pushed"
+          echo ""
+          echo "📦 Package Managers to Update:"
+          echo ""
         silent: true
-      - gotestsum -f pkgname ./...
-      - cmd: echo "🛠️  Running linting checks (excluding errcheck)..."
+      - cmd: |
+          echo "1. 🏠 Homebrew (macOS/Linux)"
+          echo "   • Fork: https://github.com/go-task/homebrew-tap"
+          echo "   • Create your tap: https://github.com/vikbert/homebrew-taskr"
+          echo "   • Update Formula/taskr.rb with new version and SHA256"
+          echo "   • Submit PR to your tap repository"
+          echo ""
         silent: true
-      - golangci-lint run --timeout=5m --max-issues-per-linter=0 --max-same-issues=0 --new=false --disable=errcheck
-      - cmd: echo "✅ Validation passed, proceeding with release..."
+      - cmd: |
+          echo "2. 📦 npm (Cross-platform)"
+          echo "   • Publish to npm: npm publish"
+          echo "   • Package name: @vikbert/taskr or @taskr/cli"
+          echo "   • Update package.json with correct version"
+          echo ""
         silent: true
-      - "go run ./cmd/taskr/task.go release:{{index .MATCH 0}}"
-
-  publish:quick:*:
-    category: release
-    desc: Quick publishing workflow (skips linting)
-    summary: |
-      Fast publishing workflow that skips linting checks.
-      Use when you know the code quality is good or for urgent releases.
-
-      Usage: taskr publish:quick:<version>
-    cmds:
-      - cmd: echo "🚀 Starting quick publish workflow..."
+      - cmd: |
+          echo "3. 📱 Snap (Linux)"
+          echo "   • Repository: https://github.com/vikbert/snap"
+          echo "   • Update snap/snapcraft.yaml with new version"
+          echo "   • Push changes to trigger automated build"
+          echo ""
         silent: true
-      - cmd: echo "📋 Running basic validation..."
+      - cmd: |
+          echo "4. 🪟 WinGet (Windows)"
+          echo "   • Repository: https://github.com/microsoft/winget-pkgs"
+          echo "   • Submit PR to add/update Taskr.Task package manifest"
+          echo "   • Use the installer URL from GitHub releases"
+          echo ""
         silent: true
-      - gotestsum -f pkgname ./...
-      - cmd: echo "⚠️  Skipping linting checks (use publish:* for full checks)..."
+      - cmd: |
+          echo "5. 🌐 Cloudsmith (RPM/DEB)"
+          echo "   • Create Taskr repository: https://cloudsmith.io/~vikbert/repos/taskr"
+          echo "   • Upload RPM/DEB packages from GoReleaser artifacts"
+          echo "   • Update repository metadata"
+          echo ""
         silent: true
-      - cmd: echo "✅ Basic validation passed, proceeding with release..."
+      - cmd: |
+          echo "6. 🤝 Community Package Managers"
+          echo "   • Chocolatey: Submit PR to https://github.com/chocolatey-community/chocolatey-coreteampackages"
+          echo "   • Scoop: Submit PR to https://github.com/ScoopInstaller/Main"
+          echo "   • Arch Linux: Submit PR to https://gitlab.archlinux.org/archlinux/packaging/packages/go-task"
+          echo "   • Fedora: Submit PR to https://src.fedoraproject.org/rpms/golang-github-task"
+          echo "   • Nix: Submit PR to https://github.com/NixOS/nixpkgs"
+          echo "   • FreeBSD: Submit PR to https://cgit.freebsd.org/ports/tree/devel/task"
+          echo ""
         silent: true
-      - "go run ./cmd/taskr/task.go release:{{index .MATCH 0}}"
-
-  publish:emergency:*:
-    category: release
-    desc: Emergency publishing workflow (tests only, no linting)
-    summary: |
-      Emergency publishing workflow for urgent releases.
-      Only runs tests, completely skips linting.
-
-      Usage: taskr publish:emergency:<version>
-    cmds:
-      - cmd: echo "🚨 Starting EMERGENCY publish workflow..."
+      - cmd: |
+          echo "🔧 Automation Helpers:"
+          echo "   • GitHub Action: Create fork of go-task/setup-task"
+          echo "   • Mise integration: Already configured for vikbert/taskr"
+          echo "   • pkgx: Already configured for taskr-io.vercel.app"
+          echo ""
+          echo "📋 Quick Commands Reference:"
+          echo ""
+          echo "   # Check current release status"
+          echo "   gh release list --repo vikbert/taskr"
+          echo ""
+          echo "   # Download release artifacts (if needed)"
+          echo "   gh release download v{{.VERSION}} --repo vikbert/taskr"
+          echo ""
+          echo "   # Update Homebrew formula example:"
+          echo "   brew bump-formula-pr --url https://github.com/vikbert/taskr/archive/v{{.VERSION}}.tar.gz taskr"
+          echo ""
+          echo "📝 Remember to update installation docs after publishing!"
         silent: true
-      - cmd: echo "📋 Running minimal validation (tests only)..."
-        silent: true
-      - gotestsum -f pkgname ./...
-      - cmd: echo "⚠️  ALL QUALITY CHECKS SKIPPED FOR EMERGENCY RELEASE..."
-        silent: true
-      - cmd: echo "✅ Proceeding with emergency release..."
-        silent: true
-      # Call the actual release task
-      - "go run ./cmd/taskr/task.go release:{{index .MATCH 0}}"

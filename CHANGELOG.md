@@ -1,14 +1,5 @@
 # Changelog
 
-## v3.47.6 - 2025-12-25
-
-- **Rebranding**: Complete rebranding from go-task/task to vikbert/taskr
-- **Documentation**: Updated all documentation to reference Taskr instead of Task
-- **Installation**: Updated installation guides for Taskr
-- **Publishing**: Added comprehensive publishing workflow and package manager guides
-- **Testing**: Fixed signal handling tests for macOS compatibility
-- **Build**: Fixed gotestsum parameter handling for CI compatibility
-
 ## v3.46.3 - 2025-12-22
 
 - **Add index**: sort the task by given task index
