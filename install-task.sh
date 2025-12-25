@@ -62,17 +62,17 @@ execute() {
 }
 get_binaries() {
   case "$PLATFORM" in
-    darwin/amd64) BINARIES="task" ;;
-    darwin/arm64) BINARIES="task" ;;
-    darwin/arm) BINARIES="task" ;;
-    linux/386) BINARIES="task" ;;
-    linux/amd64) BINARIES="task" ;;
-    linux/arm64) BINARIES="task" ;;
-    linux/arm) BINARIES="task" ;;
-    windows/386) BINARIES="task" ;;
-    windows/amd64) BINARIES="task" ;;
-    windows/arm64) BINARIES="task" ;;
-    windows/arm) BINARIES="task" ;;
+    darwin/amd64) BINARIES="taskr" ;;
+    darwin/arm64) BINARIES="taskr" ;;
+    darwin/arm) BINARIES="taskr" ;;
+    linux/386) BINARIES="taskr" ;;
+    linux/amd64) BINARIES="taskr" ;;
+    linux/arm64) BINARIES="taskr" ;;
+    linux/arm) BINARIES="taskr" ;;
+    windows/386) BINARIES="taskr" ;;
+    windows/amd64) BINARIES="taskr" ;;
+    windows/arm64) BINARIES="taskr" ;;
+    windows/arm) BINARIES="taskr" ;;
     *)
       log_crit "platform $PLATFORM is not supported.  Make sure this script is up-to-date and file request at https://github.com/${PREFIX}/issues/new"
       exit 1
@@ -338,10 +338,10 @@ End of functions from https://github.com/client9/shlib
 ------------------------------------------------------------------------
 EOF
 
-PROJECT_NAME="task"
-OWNER=go-task
-REPO="task"
-BINARY=task
+PROJECT_NAME="taskr"
+OWNER=vikbert
+REPO="taskr"
+BINARY=taskr
 FORMAT=tar.gz
 OS=$(uname_os)
 ARCH=$(uname_arch)
@@ -351,6 +351,8 @@ PREFIX="$OWNER/$REPO"
 log_prefix() {
 	echo "$PREFIX"
 }
+# Update the prefix for logging
+PREFIX="$OWNER/$REPO"
 PLATFORM="${OS}/${ARCH}"
 GITHUB_DOWNLOAD=https://github.com/${OWNER}/${REPO}/releases/download
 
@@ -374,7 +376,7 @@ log_info "found version: ${VERSION} for ${TAG}/${OS}/${ARCH}"
 NAME=${BINARY}_${OS}_${ARCH}
 TARBALL=${NAME}.${FORMAT}
 TARBALL_URL=${GITHUB_DOWNLOAD}/${TAG}/${TARBALL}
-CHECKSUM=task_checksums.txt
+CHECKSUM=taskr_checksums.txt
 CHECKSUM_URL=${GITHUB_DOWNLOAD}/${TAG}/${CHECKSUM}
 
 

@@ -10,16 +10,20 @@
 Get started with Taskr in just a few commands:
 
 ```bash
-# Clone the repository
-git clone https://github.com/vikbert/taskr.git
-cd taskr
 
-# Install Taskr
-task install
-taskr --version
+## install via brew
+brew tap vikbert/taskr
+brew install taskr
 
-# Run tests to ensure everything works
-task test
+## install via go
+go install github.com/vikbert/taskr/v3/cmd/taskr@latest
+
+## install via shell
+sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d
+
+## install via binary
+open https://github.com/vikbert/taskr/releases
+
 ```
 
 ## 🛠️ Development
