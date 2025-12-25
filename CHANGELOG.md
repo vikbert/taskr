@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.47.6 - 2025-12-25
+
+- **update the documentation**: update the documentation to the latest version
+- **update homebrew tap**: add taskr homebrew tap and add the newest version
+
+## v3.47.5 - 2025-12-24
+- **Add banner config**: enable banner feature
+
 ## v3.46.3 - 2025-12-22
 
 - **Add index**: sort the task by given task index

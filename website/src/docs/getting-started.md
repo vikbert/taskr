@@ -15,7 +15,7 @@ haven't installed Task yet, head over to our [installation guide](installation).
 Once Task is installed, you can create your first Taskfile by running:
 
 ```shell
-task --init
+taskr --init
 ```
 
 This will create a file called `Taskfile.yml` in the current directory. If you
@@ -23,14 +23,14 @@ want to create the file in another directory, you can pass an absolute or
 relative path to the directory into the command:
 
 ```shell
-task --init ./subdirectory
+taskr --init ./subdirectory
 ```
 
 Or if you want the Taskfile to have a specific name, you can pass in the name of
 the file:
 
 ```shell
-task --init Custom.yml
+taskr --init Custom.yml
 ```
 
 This will create a Taskfile that looks something like this:
@@ -81,14 +81,14 @@ the absolute or relative path to the directory as an argument using the `--dir`
 flag:
 
 ```shell
-task --dir ./subdirectory
+taskr --dir ./subdirectory
 ```
 
 Or if you created a Taskfile with a different name, you can run it by passing
 the name of the Taskfile as an argument using the `--taskfile` flag:
 
 ```shell
-task --taskfile Custom.yml
+taskr --taskfile Custom.yml
 ```
 
 ## Adding a build task
@@ -105,21 +105,48 @@ called must be available as a built-in or in the system's `PATH`.
 When you're done, it should look something like this:
 
 ```yaml
-version: '3'
+version: "3"
+banner: true
+project: myApp
+categories: ["docker"]
 
 vars:
-  GREETING: Hello, World!
+  DC: docker compose -f docker/docker-compose.yml
+  DC_EXEC_APP: "{{.DC}} exec app"
+
+env:
+  SHELL: /bin/bash
 
 tasks:
-  default:
-    desc: Print a greeting message
+  run:
+    desc: Run API server with hot-reload
+    category: dev
+    index: 2
     cmds:
-      - echo "{{.GREETING}}"
-    silent: true
+      - "{{.DC_EXEC_APP}} air"
 
   build:
+    desc: Build Go application
+    deps: [setup-dirs]
+    category: dev
+    index: 1
     cmds:
-      - go build ./cmd/main.go
+      - '{{.DC_EXEC_APP}} go build -ldflags="-w -s" -o {{.OUT_DIR}}/api ./cmd/api'
+    silent: true
+
+  tidy:
+    category: dependencies
+    desc: Tidy and verify dependencies
+    cmds:
+      - "{{.DC_EXEC_APP}} go mod tidy"
+    silent: true
+
+  logs:
+    category: docker
+    desc: Follow logs from all services
+    cmds:
+      - "{{.DC}} logs -f"
+
 ```
 
 Call the task by running:

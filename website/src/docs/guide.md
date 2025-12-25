@@ -99,9 +99,9 @@ from stdin, you must specify the `-t/--taskfile` flag with the special `-`
 value. You may then pipe into Task as you would any other program:
 
 ```shell
-task -t - <(cat ./Taskfile.yml)
+taskr -t - <(cat ./Taskfile.yml)
 # OR
-cat ./Taskfile.yml | task -t -
+cat ./Taskfile.yml | taskr -t -
 ```
 
 ## Environment variables
@@ -341,7 +341,7 @@ tasks:
 If you run `task -a` it will print :
 
 ```sh
-task: Available tasks for this project:
+taskr: Available tasks for this project:
 * greet:
 * foo
 ```
@@ -1187,7 +1187,7 @@ listed below (most important first):
 Example of sending parameters with environment variables:
 
 ```shell
-$ TASK_VARIABLE=a-value task do-something
+$ TASK_VARIABLE=a-value taskr do-something
 ```
 
 ::: tip
@@ -1201,7 +1201,7 @@ Since some shells do not support the above syntax to set environment variables
 command.
 
 ```shell
-$ task write-file FILE=file.txt "CONTENT=Hello, World!" print "MESSAGE=All done!"
+$ taskr write-file FILE=file.txt "CONTENT=Hello, World!" print "MESSAGE=All done!"
 ```
 
 Example of locally declared vars:
@@ -1758,14 +1758,14 @@ and store the result in the `.SERVICE` variable which is then echoed out in the
 cmds:
 
 ```shell
-$ task start:foo
+$ taskr start:foo
 Starting foo
 ```
 
 You can use whitespace in your arguments as long as you quote the task name:
 
 ```shell
-$ task "start:foo bar"
+$ taskr "start:foo bar"
 Starting foo bar
 ```
 
@@ -1774,7 +1774,7 @@ be used. If you are using included Taskfiles, tasks in parent files will be
 considered first.
 
 ```shell
-$ task start:foo:3
+$ taskr start:foo:3
 Starting foo with 3 replicas
 ```
 
@@ -2002,8 +2002,8 @@ tasks:
 ```
 
 ```shell
-❯ task dangerous
-task: "This is a dangerous command... Do you want to continue?" [y/N]
+❯ taskr dangerous
+taskr: "This is a dangerous command... Do you want to continue?" [y/N]
 ```
 
 Prompts can be a single value or a list of prompts, like below:
@@ -2029,7 +2029,7 @@ will exit with [exit code](/docs/reference/cli#exit-codes) 205. If approved,
 Task will continue as normal.
 
 ```shell
-❯ task example
+❯ taskr example
 not dangerous command
 task: "This is a dangerous command. Do you want to continue?" [y/N]
 y
@@ -2220,7 +2220,7 @@ tasks:
 ```
 
 ```shell
-$ task default
+$ taskr default
 ::group::default
 Hello, World!
 ::endgroup::
@@ -2245,8 +2245,8 @@ tasks:
 ```
 
 ```shell
-$ task passes
-$ task errors
+$ taskr passes
+$ taskr errors
 output-of-errors
 task: Failed to run task "errors": exit status 1
 ```
@@ -2278,7 +2278,7 @@ tasks:
 ```
 
 ```shell
-$ task default
+$ taskr default
 [print-foo] foo
 [print-bar] bar
 [print-baz] baz
