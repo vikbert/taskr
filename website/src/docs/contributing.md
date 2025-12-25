@@ -8,7 +8,7 @@ outline: deep
 
 # Contributing
 
-Contributions to Task are very welcome, but we ask that you read this document
+Contributions to Taskr are very welcome, but we ask that you read this document
 before submitting a PR.
 
 ::: info

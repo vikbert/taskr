@@ -1,6 +1,6 @@
 ---
 title: Command Line Interface Reference
-description: Complete reference for Task CLI commands, flags, and exit codes
+description: Complete reference for Taskr CLI commands, flags, and exit codes
 permalink: /reference/cli/
 outline: deep
 ---

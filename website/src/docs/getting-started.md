@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Guide for getting started with Task
+description: Guide for getting started with Taskr
 outline: deep
 ---
 

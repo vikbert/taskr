@@ -1,6 +1,6 @@
 ---
 title: Taskfile Schema Reference
-description: A reference for the Taskfile schema
+description: A reference for the Taskfile schema in Taskr
 outline: deep
 ---
 
@@ -156,7 +156,8 @@ silent: true
 
 - **Type**: `bool`
 - **Default**: `false`
-- **Description**: If true, displays a banner with 'TaskR' and version number before listing tasks
+- **Description**: If true, displays a banner with project name(default:'Taskr') and version number
+  before listing tasks
 
 ```yaml
 banner: true
@@ -165,7 +166,8 @@ banner: true
 ### `project`
 
 - **Type**: `string`
-- **Description**: The name of the current project, displayed in the banner when available
+- **Description**: The name of the current project, displayed in the banner when
+  available
 
 ```yaml
 project: MyAwesomeProject
@@ -174,10 +176,12 @@ project: MyAwesomeProject
 ### `categories`
 
 - **Type**: `[]string`
-- **Description**: A list of categories that defines the order in which task categories are displayed when listing tasks. Tasks without a category are grouped under 'general' and displayed first
+- **Description**: A list of categories that defines the order in which task
+  categories are displayed when listing tasks. Tasks without a category are
+  grouped under 'general' and displayed first
 
 ```yaml
-categories: ["build", "test", "deploy"]
+categories: ['build', 'test', 'deploy']
 ```
 
 ### `dotenv`
@@ -537,7 +541,9 @@ tasks:
 #### `index`
 
 - **Type**: `number`
-- **Description**: Optional index for ordering tasks within categories. Tasks are sorted by index value (ascending), then by YAML position for tasks with the same index or no index
+- **Description**: Optional index for ordering tasks within categories. Tasks
+  are sorted by index value (ascending), then by YAML position for tasks with
+  the same index or no index
 
 ```yaml
 tasks:

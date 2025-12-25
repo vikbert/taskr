@@ -8,7 +8,7 @@ outline: deep
 
 # FAQ
 
-This page contains a list of frequently asked questions about Task.
+This page contains a list of frequently asked questions about Taskr.
 
 ## When will \<feature\> be released? / ETAs
 

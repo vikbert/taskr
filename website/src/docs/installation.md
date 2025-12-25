@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Installation methods for Task
+description: Installation methods for Taskr
 outline: deep
 ---
 
