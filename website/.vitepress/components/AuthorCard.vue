@@ -23,9 +23,9 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed } from 'vue';
 const props = defineProps({
-  author: String,
+  author: String
 });
 
 const author = computed(() => {

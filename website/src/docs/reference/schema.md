@@ -515,15 +515,15 @@ tasks:
 tasks:
   # Single prompt
   deploy:
-    prompt: "Deploy to production?"
+    prompt: 'Deploy to production?'
     cmds:
       - ./deploy.sh
 
   # Multiple prompts
   deploy-multi:
     prompt:
-      - "Are you sure?"
-      - "This will affect live users!"
+      - 'Are you sure?'
+      - 'This will affect live users!'
     cmds:
       - ./deploy.sh
 ```
@@ -619,8 +619,8 @@ tasks:
 - **Type**: `string`
 - **Description**: The directory in which this task should run
 - **Default**: If the task is in the root Taskfile, the default `dir` is
-  `ROOT_DIR`. For included Taskfiles, the default `dir` is the value specified in
-  their respective `includes.*.dir` field (if any).
+  `ROOT_DIR`. For included Taskfiles, the default `dir` is the value specified
+  in their respective `includes.*.dir` field (if any).
 
 ```yaml
 tasks:

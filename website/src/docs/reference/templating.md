@@ -338,7 +338,8 @@ tasks:
 
 ## Available Functions
 
-Task provides a comprehensive set of functions for templating. Functions can be chained using pipes (`|`) and combined for powerful templating capabilities.
+Task provides a comprehensive set of functions for templating. Functions can be
+chained using pipes (`|`) and combined for powerful templating capabilities.
 
 ### Logic and Control Flow
 
@@ -402,7 +403,7 @@ tasks:
   length:
     vars:
       ITEMS: [a, b, c, d]
-      TEXT: "Hello World"
+      TEXT: 'Hello World'
     cmds:
       - echo "Found {{len .ITEMS}} items"
       - echo "Text has {{len .TEXT}} characters"
@@ -418,7 +419,7 @@ tasks:
     vars:
       ITEMS: [a, b, c, d, e]
     cmds:
-      - echo "{{slice .ITEMS 1 3}}"     # [b c]
+      - echo "{{slice .ITEMS 1 3}}" # [b c]
 ```
 
 ### String Functions
@@ -431,15 +432,15 @@ tasks:
     vars:
       MESSAGE: '  Hello World  '
       NAME: 'john doe'
-      TEXT: "Hello World"
+      TEXT: 'Hello World'
     cmds:
-      - echo "{{.MESSAGE | trim}}"          # "Hello World"
-      - echo "{{.NAME | title}}"            # "John Doe"
-      - echo "{{.NAME | upper}}"            # "JOHN DOE"
-      - echo "{{.MESSAGE | lower}}"         # "hello world"
-      - echo "{{.NAME | trunc 4}}"          # "john"
-      - echo "{{"test" | repeat 3}}"        # "testtesttest"
-      - echo "{{.TEXT | substr 0 5}}"       # "Hello"
+      - echo "{{.MESSAGE | trim}}" # "Hello World"
+      - echo "{{.NAME | title}}" # "John Doe"
+      - echo "{{.NAME | upper}}" # "JOHN DOE"
+      - echo "{{.MESSAGE | lower}}" # "hello world"
+      - echo "{{.NAME | trunc 4}}" # "john"
+      - echo "{{"test" | repeat 3}}" # "testtesttest"
+      - echo "{{.TEXT | substr 0 5}}" # "Hello"
 ```
 
 #### String Testing and Searching
@@ -451,9 +452,9 @@ tasks:
       FILENAME: 'app.tar.gz'
       EMAIL: 'user@example.com'
     cmds:
-      - echo "{{.FILENAME | hasPrefix "app"}}"    # true
-      - echo "{{.FILENAME | hasSuffix ".gz"}}"    # true
-      - echo "{{.EMAIL | contains "@"}}"          # true
+      - echo "{{.FILENAME | hasPrefix "app"}}" # true
+      - echo "{{.FILENAME | hasSuffix ".gz"}}" # true
+      - echo "{{.EMAIL | contains "@"}}" # true
 ```
 
 #### String Replacement and Formatting
@@ -465,10 +466,10 @@ tasks:
       TEXT: 'Hello, World!'
       UNSAFE: 'file with spaces.txt'
     cmds:
-      - echo "{{.TEXT | replace "," ""}}"         # "Hello World!"
-      - echo "{{.TEXT | quote}}"                  # "\"Hello, World!\""
-      - echo "{{.UNSAFE | shellQuote}}"           # Shell-safe quoting
-      - echo "{{.UNSAFE | q}}"                    # Short alias for shellQuote
+      - echo "{{.TEXT | replace "," ""}}" # "Hello World!"
+      - echo "{{.TEXT | quote}}" # "\"Hello, World!\""
+      - echo "{{.UNSAFE | shellQuote}}" # Shell-safe quoting
+      - echo "{{.UNSAFE | q}}" # Short alias for shellQuote
 ```
 
 #### Regular Expressions
@@ -480,10 +481,10 @@ tasks:
       EMAIL: 'user@example.com'
       TEXT: 'abc123def456'
     cmds:
-      - echo "{{regexMatch "@" .EMAIL}}"                    # true
-      - echo "{{regexFind "[0-9]+" .TEXT}}"                # "123"
-      - echo "{{regexFindAll "[0-9]+" .TEXT -1}}"          # ["123", "456"]
-      - echo "{{regexReplaceAll "[0-9]+" .TEXT "X"}}"      # "abcXdefX"
+      - echo "{{regexMatch "@" .EMAIL}}" # true
+      - echo "{{regexFind "[0-9]+" .TEXT}}" # "123"
+      - echo "{{regexFindAll "[0-9]+" .TEXT -1}}" # ["123", "456"]
+      - echo "{{regexReplaceAll "[0-9]+" .TEXT "X"}}" # "abcXdefX"
 ```
 
 ### List Functions
@@ -494,13 +495,13 @@ tasks:
 tasks:
   list-basic:
     vars:
-      ITEMS: ["apple", "banana", "cherry", "date"]
+      ITEMS: ['apple', 'banana', 'cherry', 'date']
     cmds:
-      - echo "First {{.ITEMS | first}}"          # "apple"
-      - echo "Last {{.ITEMS | last}}"            # "date"
-      - echo "Rest {{.ITEMS | rest}}"            # ["banana", "cherry", "date"]
-      - echo "Initial {{.ITEMS | initial}}"      # ["apple", "banana", "cherry"]
-      - echo "Length {{.ITEMS | len}}"           # 4
+      - echo "First {{.ITEMS | first}}" # "apple"
+      - echo "Last {{.ITEMS | last}}" # "date"
+      - echo "Rest {{.ITEMS | rest}}" # ["banana", "cherry", "date"]
+      - echo "Initial {{.ITEMS | initial}}" # ["apple", "banana", "cherry"]
+      - echo "Length {{.ITEMS | len}}" # 4
 ```
 
 #### List Manipulation
@@ -510,13 +511,13 @@ tasks:
   list-manipulate:
     vars:
       NUMBERS: [3, 1, 4, 1, 5, 9, 1]
-      FRUITS: ["apple", "banana"]
+      FRUITS: ['apple', 'banana']
     cmds:
-      - echo "{{.NUMBERS | uniq}}"                       # [3, 1, 4, 5, 9]
-      - echo "{{.NUMBERS | sortAlpha}}"                  # [1, 1, 1, 3, 4, 5, 9]
-      - echo"'{{append .FRUITS "cherry"}}""              # ["apple", "banana", "cherry"]
-      - echo "{{ without .NUMBERS 1}}"                   # [3, 4, 5, 9]
-      - echo "{{.NUMBERS | has 5}}"                      # true
+      - echo "{{.NUMBERS | uniq}}" # [3, 1, 4, 5, 9]
+      - echo "{{.NUMBERS | sortAlpha}}" # [1, 1, 1, 3, 4, 5, 9]
+      - echo"'{{append .FRUITS "cherry"}}"" # ["apple", "banana", "cherry"]
+      - echo "{{ without .NUMBERS 1}}" # [3, 4, 5, 9]
+      - echo "{{.NUMBERS | has 5}}" # true
 ```
 
 #### String Lists
@@ -532,11 +533,11 @@ tasks:
         line2
         line3
     cmds:
-      - echo "{{.CSV | splitList ","}}"           # ["apple", "banana", "cherry"]
-      - echo "{{.WORDS | join " "}}"              # "hello world from task"
-      - echo "{{.WORDS | sortAlpha}}"             # ["from", "hello", "task", "world"]
-      - echo "{{.MULTILINE | splitLines}}"        # Split on newlines (Unix/Windows)
-      - echo "{{.MULTILINE | catLines}}"          # Replace newlines with spaces
+      - echo "{{.CSV | splitList ","}}" # ["apple", "banana", "cherry"]
+      - echo "{{.WORDS | join " "}}" # "hello world from task"
+      - echo "{{.WORDS | sortAlpha}}" # ["from", "hello", "task", "world"]
+      - echo "{{.MULTILINE | splitLines}}" # Split on newlines (Unix/Windows)
+      - echo "{{.MULTILINE | catLines}}" # Replace newlines with spaces
 ```
 
 #### Shell Argument Parsing
@@ -563,15 +564,15 @@ tasks:
       B: 3
       NUMBERS: [1, 5, 3, 9, 2]
     cmds:
-      - echo "Addition {{add .A .B}}"            # 13
-      - echo "Subtraction {{sub .A .B}}"         # 7
-      - echo "Multiplication {{mul .A .B}}"      # 30
-      - echo "Division {{div .A .B}}"            # 3
-      - echo "Modulo {{mod .A .B}}"              # 1
-      - echo "Maximum {{.NUMBERS | max}}"        # 9
-      - echo "Minimum {{.NUMBERS | min}}"        # 1
-      - echo "Random 1-99 {{randInt 1 100}}"     # Random number
-      - echo "Random 0-999 {{randIntN 1000}}"    # Random number 0-999
+      - echo "Addition {{add .A .B}}" # 13
+      - echo "Subtraction {{sub .A .B}}" # 7
+      - echo "Multiplication {{mul .A .B}}" # 30
+      - echo "Division {{div .A .B}}" # 3
+      - echo "Modulo {{mod .A .B}}" # 1
+      - echo "Maximum {{.NUMBERS | max}}" # 9
+      - echo "Minimum {{.NUMBERS | min}}" # 1
+      - echo "Random 1-99 {{randInt 1 100}}" # Random number
+      - echo "Random 0-999 {{randIntN 1000}}" # Random number 0-999
 ```
 
 ### Date and Time Functions
@@ -580,7 +581,7 @@ tasks:
 tasks:
   date-time:
     vars:
-      BUILD_DATE: "2023-12-25"
+      BUILD_DATE: '2023-12-25'
     cmds:
       - echo "Now {{now | date "2006-01-02 15:04:05"}}"
       - echo {{ toDate "2006-01-02" .BUILD_DATE }}
@@ -597,9 +598,9 @@ tasks:
 tasks:
   platform:
     cmds:
-      - echo "OS {{OS}}"                         # linux, darwin, windows, etc.
-      - echo "Architecture {{ARCH}}"             # amd64, arm64, etc.
-      - echo "CPU cores {{numCPU}}"              # Number of CPU cores
+      - echo "OS {{OS}}" # linux, darwin, windows, etc.
+      - echo "Architecture {{ARCH}}" # amd64, arm64, etc.
+      - echo "CPU cores {{numCPU}}" # Number of CPU cores
       - echo "Building for {{OS}}/{{ARCH}}"
 ```
 
@@ -613,10 +614,10 @@ tasks:
       OUTPUT_DIR: 'dist'
       BINARY_NAME: 'myapp'
     cmds:
-      - echo "{{.WIN_PATH | toSlash}}"                          # Convert to forward slashes
-      - echo "{{.WIN_PATH | fromSlash}}"                        # Convert to OS-specific slashes
-      - echo "{{joinPath .OUTPUT_DIR .BINARY_NAME}}"            # Join path elements
-      - echo "Relative {{relPath .ROOT_DIR .TASKFILE_DIR}}"    # Get relative path
+      - echo "{{.WIN_PATH | toSlash}}" # Convert to forward slashes
+      - echo "{{.WIN_PATH | fromSlash}}" # Convert to OS-specific slashes
+      - echo "{{joinPath .OUTPUT_DIR .BINARY_NAME}}" # Join path elements
+      - echo "Relative {{relPath .ROOT_DIR .TASKFILE_DIR}}" # Get relative path
 ```
 
 ### Data Structure Functions
@@ -665,7 +666,7 @@ tasks:
 tasks:
   defaults:
     vars:
-      API_URL: ""
+      API_URL: ''
       DEBUG: false
       ITEMS: []
     cmds:
@@ -673,7 +674,7 @@ tasks:
       - echo "{{.DEBUG | default true}}"
       - echo "{{.MISSING_VAR | default "fallback"}}"
       - echo "{{coalesce .API_URL .FALLBACK_URL "default"}}"
-      - echo "Is empty {{empty .ITEMS}}"                     # true
+      - echo "Is empty {{empty .ITEMS}}" # true
 ```
 
 ### Encoding and Serialization
@@ -724,8 +725,8 @@ tasks:
     vars:
       SECRET: 'my-secret-key'
     cmds:
-      - echo "{{.SECRET | b64enc}}"               # Encode to base64
-      - echo "{{"bXktc2VjcmV0LWtleQ==" | b64dec}}"   # Decode from base64
+      - echo "{{.SECRET | b64enc}}" # Encode to base64
+      - echo "{{"bXktc2VjcmV0LWtleQ==" | b64dec}}" # Decode from base64
 ```
 
 ### Type Conversion
@@ -739,9 +740,9 @@ tasks:
       BOOL_STR: 'true'
       ITEMS: [1, 2, 3]
     cmds:
-      - echo "{{.NUM_STR | atoi | add 8}}"        # String to int: 50
-      - echo "{{.FLOAT_STR | float64}}"           # String to float: 3.14
-      - echo "{{.ITEMS | toStrings}}"             # Convert to strings: ["1", "2", "3"]
+      - echo "{{.NUM_STR | atoi | add 8}}" # String to int: 50
+      - echo "{{.FLOAT_STR | float64}}" # String to float: 3.14
+      - echo "{{.ITEMS | toStrings}}" # Convert to strings: ["1", "2", "3"]
 ```
 
 ### Utility Functions
@@ -752,7 +753,7 @@ tasks:
 tasks:
   generate:
     vars:
-      DEPLOYMENT_ID: "{{uuid}}"
+      DEPLOYMENT_ID: '{{uuid}}'
     cmds:
       - echo "Deployment ID {{.DEPLOYMENT_ID}}"
 ```
@@ -769,7 +770,7 @@ tasks:
           nested:
             key: value
     cmds:
-      - echo "{{spew .COMPLEX_VAR}}"              # Pretty-print for debugging
+      - echo "{{spew .COMPLEX_VAR}}" # Pretty-print for debugging
 ```
 
 ### Output Functions
@@ -780,7 +781,7 @@ tasks:
 tasks:
   output:
     vars:
-      VERSION: "1.2.3"
+      VERSION: '1.2.3'
       BUILD: 42
     cmds:
       - echo '{{print "Simple output"}}'

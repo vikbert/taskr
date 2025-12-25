@@ -99,9 +99,9 @@ echo $a
 
 ## Are shell core utilities available on Windows?
 
-The most common ones, yes. And we might add more in the future.
-This is possible because Task compiles a small set of core utilities in Go and
-enables them by default on Windows for greater compatibility.
+The most common ones, yes. And we might add more in the future. This is possible
+because Task compiles a small set of core utilities in Go and enables them by
+default on Windows for greater compatibility.
 
 It's possible to control whether these builtin core utilities are used or not
 with the [`TASK_CORE_UTILS`](/docs/reference/environment#task-core-utils)
@@ -117,19 +117,19 @@ env TASK_CORE_UTILS=0 task ...
 
 This is the list of core utils that are currently available:
 
-* `base64`
-* `cat`
-* `chmod`
-* `cp`
-* `find`
-* `gzip`
-* `ls`
-* `mkdir`
-* `mktemp`
-* `mv`
-* `rm`
-* `shasum`
-* `tar`
-* `touch`
-* `xargs`
-* (more might be added in the future)
+- `base64`
+- `cat`
+- `chmod`
+- `cp`
+- `find`
+- `gzip`
+- `ls`
+- `mkdir`
+- `mktemp`
+- `mv`
+- `rm`
+- `shasum`
+- `tar`
+- `touch`
+- `xargs`
+- (more might be added in the future)

@@ -178,11 +178,7 @@
         "method": {
           "description": "Defines which method is used to check the task is up-to-date. `timestamp` will compare the timestamp of the sources and generates files. `checksum` will check the checksum (You probably want to ignore the .task folder in your .gitignore file). `none` skips any validation and always run the task.",
           "type": "string",
-          "enum": [
-            "none",
-            "checksum",
-            "timestamp"
-          ],
+          "enum": ["none", "checksum", "timestamp"],
           "default": "none"
         },
         "prefix": {
@@ -288,11 +284,7 @@
     },
     "shopt": {
       "type": "string",
-      "enum": [
-        "expand_aliases",
-        "globstar",
-        "nullglob"
-      ]
+      "enum": ["expand_aliases", "globstar", "nullglob"]
     },
     "vars": {
       "type": "object",
@@ -351,9 +343,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "task"
-      ]
+      "required": ["task"]
     },
     "cmd_call": {
       "type": "object",
@@ -390,9 +380,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "cmd"
-      ]
+      "required": ["cmd"]
     },
     "defer_task_call": {
       "type": "object",
@@ -407,9 +395,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "defer"
-      ]
+      "required": ["defer"]
     },
     "defer_cmd_call": {
       "type": "object",
@@ -424,9 +410,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "defer"
-      ]
+      "required": ["defer"]
     },
     "for_cmd_call": {
       "type": "object",
@@ -448,10 +432,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "for",
-        "cmd"
-      ]
+      "required": ["for", "cmd"]
     },
     "for_task_call": {
       "type": "object",
@@ -477,10 +458,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "for",
-        "task"
-      ]
+      "required": ["for", "task"]
     },
     "for_deps_call": {
       "type": "object",
@@ -502,10 +480,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "for",
-        "task"
-      ]
+      "required": ["for", "task"]
     },
     "for": {
       "anyOf": [
@@ -527,19 +502,13 @@
       "description": "A list of values to iterate over",
       "type": "array",
       "items": {
-        "type": [
-          "string",
-          "number"
-        ]
+        "type": ["string", "number"]
       }
     },
     "for_attribute": {
       "description": "The task attribute to iterate over",
       "type": "string",
-      "enum": [
-        "sources",
-        "generates"
-      ]
+      "enum": ["sources", "generates"]
     },
     "for_var": {
       "description": "Which variables to iterate over. The variable will be split using any whitespace character by default. This can be changed by using the `split` attribute.",
@@ -560,17 +529,13 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "var"
-      ]
+      "required": ["var"]
     },
     "for_matrix": {
       "description": "A matrix of values to iterate over",
       "type": "object",
       "additionalProperties": true,
-      "required": [
-        "matrix"
-      ]
+      "required": ["matrix"]
     },
     "precondition": {
       "anyOf": [
@@ -618,19 +583,11 @@
     },
     "run": {
       "type": "string",
-      "enum": [
-        "always",
-        "once",
-        "when_changed"
-      ]
+      "enum": ["always", "once", "when_changed"]
     },
     "outputString": {
       "type": "string",
-      "enum": [
-        "interleaved",
-        "prefixed",
-        "group"
-      ],
+      "enum": ["interleaved", "prefixed", "group"],
       "default": "interleaved"
     },
     "outputObject": {
@@ -679,10 +636,7 @@
                     }
                   }
                 },
-                "required": [
-                  "name",
-                  "enum"
-                ],
+                "required": ["name", "enum"],
                 "additionalProperties": false
               }
             ]
@@ -717,9 +671,7 @@
             },
             {
               "type": "number",
-              "enum": [
-                3
-              ]
+              "enum": [3]
             }
           ]
         },
@@ -741,11 +693,7 @@
         "method": {
           "description": "Defines which method is used to check the task is up-to-date. (default: checksum)",
           "type": "string",
-          "enum": [
-            "none",
-            "checksum",
-            "timestamp"
-          ],
+          "enum": ["none", "checksum", "timestamp"],
           "default": "checksum"
         },
         "includes": {
@@ -856,25 +804,16 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "version"
-      ],
+      "required": ["version"],
       "anyOf": [
         {
-          "required": [
-            "includes"
-          ]
+          "required": ["includes"]
         },
         {
-          "required": [
-            "tasks"
-          ]
+          "required": ["tasks"]
         },
         {
-          "required": [
-            "includes",
-            "tasks"
-          ]
+          "required": ["includes", "tasks"]
         }
       ]
     }

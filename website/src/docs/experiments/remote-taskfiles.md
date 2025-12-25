@@ -216,8 +216,8 @@ interactive terminal, so you are not able to accept a prompt. In these cases you
 are able to tell task to accept these prompts automatically by using the `--yes`
 flag or the `--trust` flag. The `--trust` flag allows you to specify trusted
 hosts for remote Taskfiles, while `--yes` applies to all prompts in Task. You
-can also configure trusted hosts in your [taskrc configuration](#trusted-hosts) using
-`remote.trusted-hosts`. Before enabling automatic trust, you should:
+can also configure trusted hosts in your [taskrc configuration](#trusted-hosts)
+using `remote.trusted-hosts`. Before enabling automatic trust, you should:
 
 1. Be sure that you trust the source and contents of the remote Taskfile.
 2. Consider using a pinned version of the remote Taskfile (e.g. A link
@@ -307,8 +307,8 @@ This experiment adds a new `remote` section to the
 remote:
   insecure: false
   offline: false
-  timeout: "30s"
-  cache-expiry: "24h"
+  timeout: '30s'
+  cache-expiry: '24h'
   cache-dir: ~/.task
   trusted-hosts:
     - github.com
@@ -346,7 +346,7 @@ remote:
 
 ```yaml
 remote:
-  timeout: "1m"
+  timeout: '1m'
 ```
 
 #### `cache-expiry`
@@ -359,7 +359,7 @@ remote:
 
 ```yaml
 remote:
-  cache-expiry: "6h"
+  cache-expiry: '6h'
 ```
 
 #### `cache-dir`
@@ -393,10 +393,10 @@ remote:
     - example.com:8080
 ```
 
-Hosts in the trusted hosts list will automatically be trusted without prompting for
-confirmation when they are first downloaded or when their checksums change. The
-host matching includes the port if specified in the URL. Use with caution and
-only add hosts you fully trust.
+Hosts in the trusted hosts list will automatically be trusted without prompting
+for confirmation when they are first downloaded or when their checksums change.
+The host matching includes the port if specified in the URL. Use with caution
+and only add hosts you fully trust.
 
 You can also specify trusted hosts via the command line:
 

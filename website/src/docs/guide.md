@@ -927,7 +927,8 @@ You can use `--force` or `-f` if you want to force a task to run even when
 up-to-date.
 
 Also, `task --status [tasks]...` will exit with a non-zero
-[exit code](/docs/reference/cli#exit-codes) if any of the tasks are not up-to-date.
+[exit code](/docs/reference/cli#exit-codes) if any of the tasks are not
+up-to-date.
 
 `status` can be combined with the
 [fingerprinting](#by-fingerprinting-locally-generated-files-and-their-sources)
@@ -1422,8 +1423,7 @@ tasks:
           matrix:
             OS: ['windows', 'linux', 'darwin']
             ARCH: ['amd64', 'arm64']
-        cmd:
-          echo "{{.ITEM.OS}}/{{.ITEM.ARCH}}"
+        cmd: echo "{{.ITEM.OS}}/{{.ITEM.ARCH}}"
 ```
 
 This will output:
@@ -1455,8 +1455,7 @@ tasks:
               ref: .OS_VAR
             ARCH:
               ref: .ARCH_VAR
-        cmd:
-          echo "{{.ITEM.OS}}/{{.ITEM.ARCH}}"
+        cmd: echo "{{.ITEM.OS}}/{{.ITEM.ARCH}}"
 ```
 
 ### Looping over your task's sources or generated files
@@ -1501,8 +1500,8 @@ files that match that glob.
 Paths will always be returned as paths relative to the task directory. If you
 need to convert this to an absolute path, you can use the built-in `joinPath`
 function. There are some
-[special variables](/docs/reference/templating#special-variables) that you may find
-useful for this.
+[special variables](/docs/reference/templating#special-variables) that you may
+find useful for this.
 
 ::: code-group
 
@@ -1823,8 +1822,8 @@ commands are executed in the reverse order if you schedule multiple of them.
 :::
 
 A special variable `.EXIT_CODE` is exposed when a command exited with a non-zero
-[exit code](/docs/reference/cli#exit-codes). You can check its presence to know if
-the task completed successfully or not:
+[exit code](/docs/reference/cli#exit-codes). You can check its presence to know
+if the task completed successfully or not:
 
 ```yaml
 version: '3'
@@ -1833,7 +1832,8 @@ tasks:
   default:
     cmds:
       - defer:
-          echo '{{if .EXIT_CODE}}Failed with {{.EXIT_CODE}}!{{else}}Success!{{end}}'
+          echo '{{if .EXIT_CODE}}Failed with
+          {{.EXIT_CODE}}!{{else}}Success!{{end}}'
       - exit 1
 ```
 
@@ -2025,8 +2025,8 @@ tasks:
 ```
 
 Warning prompts are called before executing a task. If a prompt is denied Task
-will exit with [exit code](/docs/reference/cli#exit-codes) 205. If approved, Task
-will continue as normal.
+will exit with [exit code](/docs/reference/cli#exit-codes) 205. If approved,
+Task will continue as normal.
 
 ```shell
 ❯ task example
@@ -2420,8 +2420,8 @@ if called by another task, either directly or as a dependency.
 The watcher can misbehave in certain scenarios, in particular for long-running
 servers. There is a [known bug](https://github.com/vikbert/taskr/issues/160)
 where child processes of the running might not be killed appropriately. It's
-advised to avoid running commands as `go run` and prefer `go build [...] &&
-./binary` instead.
+advised to avoid running commands as `go run` and prefer
+`go build [...] && ./binary` instead.
 
 If you are having issues, you might want to try tools specifically designed for
 live-reloading, like [Air](https://github.com/air-verse/air/). Also, be sure to

@@ -21,7 +21,10 @@ export default {
     app.component('AuthorCard', AuthorCard);
     app.component('BlogPost', BlogPost);
     app.component('Version', Version);
-    app.component('CopyOrDownloadAsMarkdownButtons', CopyOrDownloadAsMarkdownButtons);
+    app.component(
+      'CopyOrDownloadAsMarkdownButtons',
+      CopyOrDownloadAsMarkdownButtons
+    );
     enhanceAppWithTabs(app);
   }
 } satisfies Theme;

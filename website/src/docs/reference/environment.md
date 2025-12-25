@@ -28,11 +28,11 @@ Taskfile, not the working directory. Defaults to: `./.task`.
 
 ### `TASK_CORE_UTILS`
 
-This env controls whether the Bash interpreter will use its own
-core utilities implemented in Go, or the ones available in the system.
-Valid values are `true` (`1`) or `false` (`0`). By default, this is `true` on
-Windows and `false` on other operating systems. We might consider making this
-enabled by default on all platforms in the future.
+This env controls whether the Bash interpreter will use its own core utilities
+implemented in Go, or the ones available in the system. Valid values are `true`
+(`1`) or `false` (`0`). By default, this is `true` on Windows and `false` on
+other operating systems. We might consider making this enabled by default on all
+platforms in the future.
 
 ### `TASK_REMOTE_DIR`
 

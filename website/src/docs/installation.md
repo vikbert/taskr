@@ -266,8 +266,8 @@ default.
 :::
 
 By default, it installs the latest version available. You can also specify a tag
-(available in [releases](https://github.com/vikbert/taskr/releases)) to install a
-specific version:
+(available in [releases](https://github.com/vikbert/taskr/releases)) to install
+a specific version:
 
 ```shell
 sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d v3.36.0
@@ -331,8 +331,8 @@ config:
 
 This method loads the completion script from the currently installed version of
 task every time you create a new shell. This ensures that your completions are
-always up-to-date.
-If your executable isn’t named task, set the `TASK_EXE` environment variable before running eval.
+always up-to-date. If your executable isn’t named task, set the `TASK_EXE`
+environment variable before running eval.
 
 ::: code-group
 
@@ -387,9 +387,10 @@ task --completion fish > ~/.config/fish/completions/task.fish
 
 ### Zsh customization
 
-The Zsh completion supports the standard `verbose` zstyle to control whether task
-descriptions are shown. By default, descriptions are displayed. To show only task
-names without descriptions, add this to your `~/.zshrc` (after the completion is loaded):
+The Zsh completion supports the standard `verbose` zstyle to control whether
+task descriptions are shown. By default, descriptions are displayed. To show
+only task names without descriptions, add this to your `~/.zshrc` (after the
+completion is loaded):
 
 ```shell
 zstyle ':completion:*:*:task:*' verbose false

@@ -95,7 +95,8 @@ verbose: true
 
 - **Type**: `boolean`
 - **Default**: `true`
-- **Description**: Enable colored output. Colors are automatically enabled in CI environments (`CI=true`).
+- **Description**: Enable colored output. Colors are automatically enabled in CI
+  environments (`CI=true`).
 - **CLI equivalent**: [`-c, --color`](./cli.md#-c---color)
 
 ```yaml
@@ -106,7 +107,8 @@ color: false
 
 - **Type**: `boolean`
 - **Default**: `false`
-- **Description**: Disable fuzzy matching for task names. When enabled, Task will not suggest similar task names when you mistype a task name.
+- **Description**: Disable fuzzy matching for task names. When enabled, Task
+  will not suggest similar task names when you mistype a task name.
 - **CLI equivalent**: [`--disable-fuzzy`](./cli.md#--disable-fuzzy)
 
 ```yaml
@@ -149,3 +151,4 @@ concurrency: 2
 # Enable experimental features
 experiments:
   REMOTE_TASKFILES: 1
+```
