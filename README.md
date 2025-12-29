@@ -31,18 +31,36 @@ sh -c "$(curl --location https://taskr-io.vercel.app/install.sh)" -- -d
 open https://github.com/vikbert/taskr/releases
 ```
 
+## 👉 Create a `Taskfile.yml`
+
+[Getting started from this article](https://taskr-io.vercel.app/docs/getting-started]). 
+
+You can fix the schema validation issue in IDE by add this line in `Taskfile.yml`, if you want to keep both `task` and `taskr` in use.
+
+```yml
+# yaml-language-server: $schema=https://taskr-io.vercel.app/schema.json
+version: "3"
+```
+> just add the declaration of `yaml-language-server` on the top of your `Taskfile.yml`
+
+
 ## 🛠️ Development
 
 ```bash
 git clone https://github.com/vikbert/taskr.git
 cd taskr
+go install github.com/vikbert/taskr/v3/cmd/taskr@latest
 
 # Download dependencies
-task mod
+taskr mod
 
 # Install development tools
-task install:mockery
-task gotestsum:install
+taskr install:mockery
+taskr gotestsum:install
+
+# you can do force-installation after your changes in source code
+taskr reinstall
+
 ```
 
 ## 🎯 Key Enhancements
