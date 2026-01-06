@@ -214,7 +214,7 @@ func (l *Logger) PrintBannerWithProject(project string) {
 	}
 
 	// Print version information
-	l.Outf(BrightCyan, "Version: %s\n", version.GetVersionWithBuildInfo())
+	l.Outf(BrightCyan, "Taskr: v%s\n", version.GetVersionWithBuildInfo())
 
 	// Print empty line after banner
 	fmt.Println()
